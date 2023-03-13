@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "sh-portfolio-5120b"
+  },
+  "targets": {
+    "sh-portfolio-5120b": {
+      "hosting": {
+        "sh-portfolio": [
+          "sh-portfolio-5120b"
+        ]
+      }
+    }
+  }
+}
