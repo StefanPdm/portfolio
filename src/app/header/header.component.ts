@@ -13,4 +13,9 @@ export class HeaderComponent {
   dehover() {
     document.getElementById('i-point')?.setAttribute('width', '7.42px');
   }
+
+  toggleMobileMenu(id: string) {
+    document.getElementById('mobile-menu').classList.toggle('toggle-menu');
+    document.getElementById(id).classList.toggle('d-none');
+  }
 }

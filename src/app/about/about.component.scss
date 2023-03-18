@@ -7,26 +7,126 @@ $breakpoint_6: 540px;
 
 .about-wrapper {
   display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--dark-blue-bg);
 }
 
-.about-container {
+.about-me-container {
   display: flex;
+  justify-content: space-between;
+  z-index: 3;
+  font-size: 1.6rem;
+  padding-top: 110px;
+  margin-top: -140px;
+  width: 100%;
+  max-width: 1440px;
+  padding-left: 100px;
+  padding-bottom: 280px;
+
+  .about-left {
+    display: flex;
+    flex-direction: column;
+    width: 455px;
+    gap: 35px;
+    text-align: justify;
+    flex-shrink: 0;
+
+    .about-headline {
+      font-size: 9rem;
+      font-weight: 700;
+      flex-grow: 1;
+      flex-shrink: 0;
+      width: fit-content;
+    }
+    .about-main-text {
+      display: flex;
+    }
+    .about-special-container {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      width: 100%;
+
+      .about-special-text {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+
+        img {
+          padding: 5px 20px;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            scale: 1.3;
+          }
+        }
+      }
+    }
+  }
+
+  .about-right {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+    width: auto;
+    flex-shrink: 1;
+
+    img:nth-child(1) {
+      border-radius: 50%;
+      border: 4px solid var(--green);
+      z-index: 3;
+      margin-right: 167px;
+      width: fit-content;
+      max-width: 450px;
+      flex-shrink: 1;
+      margin-left: 20px;
+      object-fit: cover;
+    }
+
+    img:nth-child(2) {
+      position: absolute;
+      top: -350px;
+      right: -555px;
+    }
+
+    .about-horizontal-line-green {
+      position: absolute;
+      top: 50%;
+      right: 0px;
+      width: 167px;
+      height: 4px;
+      background: var(--green);
+    }
+  }
 }
 
-@media (max-width: $breakpoint_4) {
-  .about-wrapper {
+@media (max-width: $breakpoint_3) {
+  .mobile-none {
+    display: none !important;
+  }
+  .desktop-none {
+    display: flex !important;
   }
 
-  .about-container {
+  .about-me-container {
+    justify-content: flex-start;
+    padding-bottom: 130px;
   }
+}
+@media (max-width: $breakpoint_4) {
 }
 
 @media (max-width: $breakpoint_5) {
-  .about-container {
-  }
-}
+  .about-me-container {
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: -170px;
 
-@media (max-width: $breakpoint_6) {
-  .about-container {
+    .about-left {
+      font-size: 1.6rem;
+      flex-shrink: 1;
+    }
   }
 }

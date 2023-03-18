@@ -3,6 +3,7 @@ $breakpoint_2: 1270px;
 $breakpoint_3: 1140px;
 $breakpoint_4: 1000px;
 $breakpoint_5: 768px;
+$breakpoint_6: 540px;
 
 /* poppins-100 - latin */
 @font-face {
@@ -217,6 +218,8 @@ $breakpoint_5: 768px;
 
 html {
   font-size: 10px;
+  font-weight: 400;
+  scroll-behavior: smooth;
 }
 
 button,
@@ -233,6 +236,18 @@ body {
   font-weight: 400;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
 }
 
 a {
@@ -242,9 +257,51 @@ a {
 }
 
 .mobile-none {
-  display: block;
+  display: flex !important;
 }
 
 .desktop-none {
-  display: none;
+  display: none !important;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.headline {
+  position: relative;
+  font-size: 9rem;
+  font-weight: 700;
+}
+
+button {
+  font-size: 2.3rem;
+  font-weight: 400;
+  padding: 15px 30px;
+  background-color: var(--green);
+  margin-top: 50px;
+  margin-bottom: 300px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+  border: 0;
+  &:hover {
+    background-color: var(--purple);
+    scale: 1.1;
+  }
+}
+
+@media (max-width: $breakpoint_4) {
+  button {
+    font-size: 1.6rem;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 15px 30px;
+  }
+}
+
+@media (max-width: $breakpoint_5) {
+  .headline {
+    font-size: 4.5rem !important;
+  }
 }

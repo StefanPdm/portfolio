@@ -57,10 +57,10 @@
     <div class="menu-desktop mobile-none">
       <ul>
         <li>
-          <a href="#">About me</a>
+          <a href="#about">About me</a>
         </li>
         <li>
-          <a href="#">Skills</a>
+          <a href="#skills">Skills</a>
         </li>
         <li>
           <a href="#">Portfolio</a>
@@ -68,7 +68,26 @@
       </ul>
     </div>
     <div class="menu-mobile desktop-none">
-      <img class="desktop-none" src="/assets/img/header/burger_1.svg" alt="">
+      <img id="burger" class="" src="/assets/img/header/burger_1.svg" alt="burger-menu"
+        (click)="toggleMobileMenu('burger')">
+      <div class="mobile-menu-container" id="mobile-menu">
+        <ul>
+          <li>
+            <a href="#about" (click)="toggleMobileMenu('burger')">About me</a>
+          </li>
+          <li>
+            <a href="#skills" (click)="toggleMobileMenu('burger')">Skills</a>
+          </li>
+          <li>
+            <a href="#" (click)="toggleMobileMenu('burger')">Portfolio</a>
+          </li>
+          <li>
+            <a href="#" (click)="toggleMobileMenu('burger')">Contact</a>
+          </li>
+        </ul>
+        <img src="assets/img/header/icon_close.svg" alt="close" class="menu-close-button"
+          (click)="toggleMobileMenu('burger')">
+      </div>
     </div>
   </div>
 </div>
