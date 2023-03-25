@@ -12,16 +12,20 @@ $breakpoint_6: 540px;
   width: 100%;
   background-color: var(--dark-blue-bg);
   min-height: 150px;
+  overflow: hidden;
 }
 
 .portfolio-container {
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   font-size: 1.6rem;
   padding-top: 13rem;
   padding-left: 100px;
   padding-right: 100px;
+  padding-bottom: 100px;
+  z-index: 1;
 
   .portfolio-headline-container {
     display: flex;
@@ -49,9 +53,9 @@ $breakpoint_6: 540px;
   display: flex;
   justify-content: flex-end;
   max-height: 340px;
-  // border: 1px solid var(--purple);
-  gap: 86px;
+  gap: 10%;
   margin-top: 110px;
+  z-index: 2;
 
   .project-button-wrapper {
     display: flex;
@@ -80,7 +84,7 @@ $breakpoint_6: 540px;
     display: flex;
     justify-content: flex-end;
     height: 100%;
-    max-width: 340px;
+    width: 45%;
 
     img {
       object-fit: cover;
@@ -92,7 +96,7 @@ $breakpoint_6: 540px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    max-width: 40%;
+    width: 45%;
 
     .project-title {
       color: var(--purple);
@@ -102,9 +106,15 @@ $breakpoint_6: 540px;
       // margin-bottom: 35px;
     }
 
-    .poject-languages {
+    .project-languages {
       color: var(--green);
       padding: 10px 0px;
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      width: 100%;
     }
 
     button {
@@ -130,6 +140,34 @@ $breakpoint_6: 540px;
   }
 }
 
+.portfolio-shadow-purple {
+  position: absolute;
+  left: 0;
+  top: 0%;
+  transform: translate(-35px, 970px);
+  z-index: 0;
+  opacity: 0.8;
+
+  img {
+    width: 620px;
+  }
+}
+
+.portfolio-shadow-green {
+  position: absolute;
+  right: 0;
+  bottom: 0%;
+  transform: rotate(90deg) translate(100px, -230px);
+  opacity: 0.8;
+
+  img {
+    width: 440px;
+  }
+}
+
+///////////////////////////////////////////////////////////////////////
+// start meadia section ///////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 @media (max-width: $breakpoint_4) {
   .project-container {
     flex-direction: column;
@@ -143,13 +181,17 @@ $breakpoint_6: 540px;
       flex-direction: column;
 
       .project-image {
-        display: unset !important;
-        justify-content: unset;
+        display: flex !important;
+        justify-content: center;
       }
       .project-description-wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        .project-languages {
+          text-align: center !important;
+        }
 
         .project-title {
           width: 100%;
@@ -165,6 +207,7 @@ $breakpoint_6: 540px;
     .project-image {
       height: 210px;
       max-width: none;
+      justify-content: center;
 
       img {
         max-height: 100%;
@@ -176,6 +219,13 @@ $breakpoint_6: 540px;
       align-items: center;
       max-width: 60%;
 
+      .project-title {
+        text-align: center;
+      }
+
+      .project-languages {
+        text-align: center !important;
+      }
       .project-description {
         text-align: center;
       }
@@ -187,10 +237,32 @@ $breakpoint_6: 540px;
       }
     }
   }
+
+  .portfolio-shadow-purple {
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, 1250px);
+
+    img {
+      width: 300px;
+    }
+  }
+
+  .portfolio-shadow-green {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    img {
+      width: 440px;
+    }
+  }
 }
 
 @media (max-width: $breakpoint_5) {
   .project-description-wrapper {
+    width: 100% !important;
     max-width: 100% !important;
   }
 }
