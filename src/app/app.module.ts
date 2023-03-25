@@ -13,6 +13,7 @@ import { StartComponent } from './start/start.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { SkillsComponent } from './skills/skills.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SkillsComponent } from './skills/skills.component';
     StartComponent,
     FooterComponent,
     AboutComponent,
-    SkillsComponent
+    SkillsComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,

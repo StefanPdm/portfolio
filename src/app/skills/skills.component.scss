@@ -19,7 +19,9 @@ $breakpoint_6: 540px;
   max-width: 1440px;
   padding-left: 100px;
   padding-right: 100px;
-  padding-bottom: 280px;
+  padding-bottom: 170px;
+  padding-top: 110px;
+  margin-top: -110px;
   font-size: 1.6rem;
 
   button {
@@ -35,7 +37,7 @@ $breakpoint_6: 540px;
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(88px, 98px));
   grid-template-rows: repeat(auto-fill, 100px);
-  column-gap: 125px;
+  column-gap: 100px;
   row-gap: 50px;
 
   > img {
@@ -58,6 +60,24 @@ $breakpoint_6: 540px;
     img {
       height: 56px;
     }
+
+    &:hover {
+      img {
+        animation: icon-jump 300ms ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes icon-jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
@@ -68,8 +88,8 @@ $breakpoint_6: 540px;
   align-items: flex-end;
   margin-left: 20px;
   width: 40%;
-  min-width: 400px;
-  max-width: 430px;
+  min-width: 470px;
+  max-width: 470px;
 
   div:nth-child(2) {
     text-align: right;
@@ -85,7 +105,9 @@ $breakpoint_6: 540px;
   }
 
   button {
-    transform: translateX(-50%);
+    margin-right: 50%;
+    transform: translateX(50%);
+    transform-origin: center;
   }
 }
 
@@ -126,7 +148,8 @@ $breakpoint_6: 540px;
 
 @media (max-width: $breakpoint_5) {
   .skills-container {
-    padding: 0 25px 150px 25px;
+    padding: 110px 25px 150px 25px;
+    // margin-top: 50px;
 
     .skills-left {
       column-gap: 80px;
@@ -155,7 +178,7 @@ $breakpoint_6: 540px;
 
 @media (max-width: $breakpoint_6) {
   .skills-container {
-    padding: 0 25px;
+    padding: 110px 25px;
 
     .skills-left {
       grid-template-columns: 1fr 1fr 1fr;

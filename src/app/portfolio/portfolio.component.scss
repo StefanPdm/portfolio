@@ -1,0 +1,215 @@
+$breakpoint_1: 1410px;
+$breakpoint_2: 1270px;
+$breakpoint_3: 1140px;
+$breakpoint_4: 1000px;
+$breakpoint_5: 768px;
+$breakpoint_6: 540px;
+
+.portfolio-wrapper {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--dark-blue-bg);
+  min-height: 150px;
+}
+
+.portfolio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.6rem;
+  padding-top: 13rem;
+  padding-left: 100px;
+  padding-right: 100px;
+
+  .portfolio-headline-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    align-items: center;
+
+    div:nth-child(1) {
+      height: 4px;
+      width: calc(100vw * 0.075);
+      background-color: var(--purple);
+      margin-right: 30px;
+    }
+    div:nth-child(3) {
+      height: 4px;
+      width: calc(100vw * 0.3);
+      background-color: var(--purple);
+      margin-left: 30px;
+    }
+  }
+}
+
+.project-container {
+  display: flex;
+  justify-content: flex-end;
+  max-height: 340px;
+  // border: 1px solid var(--purple);
+  gap: 86px;
+  margin-top: 110px;
+
+  .project-button-wrapper {
+    display: flex;
+    gap: 86px;
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+
+    .project-image {
+      display: flex;
+      justify-content: flex-start;
+    }
+    .project-description-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      .project-description {
+        text-align: end;
+      }
+    }
+  }
+
+  .project-image {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    max-width: 340px;
+
+    img {
+      object-fit: cover;
+      object-position: 0 -65px;
+    }
+  }
+
+  .project-description-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 40%;
+
+    .project-title {
+      color: var(--purple);
+      font-size: 3.2rem;
+      font-weight: 700;
+      padding-top: 5px;
+      // margin-bottom: 35px;
+    }
+
+    .poject-languages {
+      color: var(--green);
+      padding: 10px 0px;
+    }
+
+    button {
+      margin: 35px 0px 0 0;
+
+      &:hover {
+        background-color: var(--green) !important;
+        padding: 15px 30px !important;
+      }
+    }
+
+    .button-live {
+      button {
+        background-color: var(--purple);
+      }
+    }
+    .button-github {
+      button {
+        background-color: transparent;
+        border: 1px solid var(--green);
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint_4) {
+  .project-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-height: none;
+    margin-top: 20px;
+    margin-bottom: 60px;
+
+    &:nth-child(even) {
+      flex-direction: column;
+
+      .project-image {
+        display: unset !important;
+        justify-content: unset;
+      }
+      .project-description-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .project-title {
+          width: 100%;
+          text-align: center;
+        }
+
+        .project-description {
+          text-align: center !important;
+        }
+      }
+    }
+
+    .project-image {
+      height: 210px;
+      max-width: none;
+
+      img {
+        max-height: 100%;
+        object-position: 0 30px;
+      }
+    }
+
+    .project-description-wrapper {
+      align-items: center;
+      max-width: 60%;
+
+      .project-description {
+        text-align: center;
+      }
+
+      .project-button-wrapper {
+        width: 100%;
+        justify-content: space-between;
+        gap: 0 !important;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint_5) {
+  .project-description-wrapper {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: $breakpoint_6) {
+  .portfolio-container {
+    padding: 110px 25px 150px 25px;
+  }
+
+  .portfolio-headline-container {
+    div:nth-child(1) {
+      width: calc(100vw * 0.06) !important;
+
+      margin-right: 10px !important;
+    }
+    div:nth-child(3) {
+      width: calc(100vw * 0.2) !important;
+
+      margin-left: 10px !important;
+    }
+  }
+}
