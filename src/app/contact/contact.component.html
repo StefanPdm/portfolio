@@ -1,0 +1,52 @@
+<div class="contact-wrapper" id="contact">
+  <div class="contact-container">
+    <div class="contact-headline-container">
+      <div></div>
+      <div class="headline">Contact</div>
+    </div>
+    <div class="contact-form-container">
+      <div class="contact-form-left">
+        <span>
+          Got a problem to solve? <br><br>
+        </span>
+        <span>
+          Contact me through this form, I am interested in hearing you, knowing your ideas and
+          contributing to
+          your projects with my work. <br><br>
+          Need a Frontend developer? Contact me!
+        </span>
+      </div>
+      <div class="contact-form-right">
+        <form (submit)="sendMail()" #contactForm autocomplete="off" method="post" action="/form">
+          <div class="input-field-wrapper">
+            <input role="presentation" contenteditable="true" type="text" placeholder="Your name"
+              name="name" #name id="name">
+            <label for="name">Your name is required</label>
+          </div>
+
+          <div class="input-field-wrapper">
+            <input role="presentation" type="email" placeholder="Your email" name="email" #email
+              id="email">
+            <label for="email">Your email is required</label>
+          </div>
+
+
+          <div class="input-field-wrapper textarea-field">
+
+            <div class="resize-wrapper">
+              <div class="pull-tab"></div>
+            </div>
+            <textarea role="presentation" placeholder="Your message" name="message" #message
+              id="message"></textarea>
+            <label for="message">Your message is empty</label>
+
+
+
+          </div>
+
+          <button type="submit" #contactButton>Send message :&#41;</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

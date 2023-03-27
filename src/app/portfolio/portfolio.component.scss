@@ -10,9 +10,12 @@ $breakpoint_6: 540px;
   position: relative;
   justify-content: center;
   width: 100%;
+
   background-color: var(--dark-blue-bg);
   min-height: 150px;
-  overflow: hidden;
+  // overflow: hidden;
+  padding-top: 110px;
+  margin-top: -110px;
 }
 
 .portfolio-container {
@@ -21,28 +24,31 @@ $breakpoint_6: 540px;
   flex-direction: column;
   align-items: center;
   font-size: 1.6rem;
-  padding-top: 13rem;
+  padding-top: calc(13rem + 0px);
   padding-left: 100px;
   padding-right: 100px;
   padding-bottom: 100px;
   z-index: 1;
+  max-width: 1440px;
 
   .portfolio-headline-container {
     display: flex;
+    justify-content: flex-end;
     position: absolute;
     top: 0;
     right: 0;
     align-items: center;
+    width: 100%;
 
     div:nth-child(1) {
       height: 4px;
-      width: calc(100vw * 0.075);
+      width: calc(100% * 0.075);
       background-color: var(--purple);
       margin-right: 30px;
     }
     div:nth-child(3) {
       height: 4px;
-      width: calc(100vw * 0.3);
+      width: calc(100% * 0.34);
       background-color: var(--purple);
       margin-left: 30px;
     }
@@ -169,6 +175,12 @@ $breakpoint_6: 540px;
 // start meadia section ///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 @media (max-width: $breakpoint_4) {
+  .portfolio-container {
+    span {
+      text-align: center;
+    }
+  }
+
   .project-container {
     flex-direction: column;
     align-items: center;
