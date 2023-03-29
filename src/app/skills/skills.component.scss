@@ -19,14 +19,14 @@ $breakpoint_6: 540px;
   max-width: 1440px;
   padding-left: 100px;
   padding-right: 100px;
-  padding-bottom: 170px;
+  padding-bottom: 110px;
   padding-top: 110px;
   margin-top: -110px;
   font-size: 1.6rem;
 
   button {
     position: relative;
-    margin: 50px 0;
+    margin: 50px 0px;
     z-index: 2;
   }
 }
@@ -103,13 +103,16 @@ $breakpoint_6: 540px;
     height: 4px;
     background-color: var(--purple);
   }
-
-  button {
-    margin-right: 50%;
-    transform: translateX(50%);
-    transform-origin: center;
+  a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 }
+
+// //////////////////////////////////////////////////////////////////
+// Media Queries  ///////////////////////////////////////////////////
+// //////////////////////////////////////////////////////////////////
 
 @media (max-width: $breakpoint_3) {
   .mobile-none {
@@ -122,6 +125,10 @@ $breakpoint_6: 540px;
   .skills-container {
     flex-direction: column-reverse;
     align-items: center;
+
+    button {
+      margin-top: 75px;
+    }
 
     .skills-left {
       justify-content: center;

@@ -13,7 +13,7 @@
           Contact me through this form, I am interested in hearing you, knowing your ideas and
           contributing to
           your projects with my work. <br><br>
-          Need a Frontend developer? Contact me!
+          Need a Frontend developer? <strong>Contact me!</strong>
         </span>
       </div>
       <div class="contact-form-right">
@@ -22,12 +22,18 @@
             <input role="presentation" contenteditable="true" type="text" placeholder="Your name"
               name="name" #name id="name">
             <label for="name">Your name is required</label>
+            <div class="status-wrapper d-none">
+              <img src="assets/img/contact/exclamation_mark.png" alt="status sign">
+            </div>
           </div>
 
           <div class="input-field-wrapper">
             <input role="presentation" type="email" placeholder="Your email" name="email" #email
               id="email">
-            <label for="email">Your email is required</label>
+            <label for="email">Your email is not valid</label>
+            <div class="status-wrapper d-none">
+              <img src="assets/img/contact/exclamation_mark.png" alt="status sign">
+            </div>
           </div>
 
 
@@ -39,14 +45,30 @@
             <textarea role="presentation" placeholder="Your message" name="message" #message
               id="message"></textarea>
             <label for="message">Your message is empty</label>
-
-
-
+            <div class="status-wrapper d-none">
+              <img src="assets/img/contact/exclamation_mark.png" alt="status sign">
+            </div>
           </div>
+          <label class="sendMessage">
+            Your contact request has been sent.
+          </label>
+          <button
+            [disabled]="!this.eventlisteners[0].boolean || !this.eventlisteners[1].boolean || !this.eventlisteners[2].boolean"
+            type="submit" #contactButton>Send
+            message
+            :&#41;</button>
 
-          <button type="submit" #contactButton>Send message :&#41;</button>
         </form>
+
+        <div class="contact-arrow-wrapper">
+          <a href="#">
+            <img src="assets/img/contact/arrow_up.png" alt="arrow up">
+          </a>
+        </div>
       </div>
+    </div>
+    <div class="contact-shadow-wrapper">
+      <img src="assets/img/portfolio/shadow_purple.png" alt="purple shadow">
     </div>
   </div>
 </div>

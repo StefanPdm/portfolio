@@ -13,7 +13,7 @@ $breakpoint_6: 540px;
 
   background-color: var(--dark-blue-bg);
   min-height: 150px;
-  // overflow: hidden;
+  // overflow: clip;
   padding-top: 110px;
   margin-top: -110px;
 }
@@ -58,6 +58,7 @@ $breakpoint_6: 540px;
 .project-container {
   display: flex;
   justify-content: flex-end;
+
   max-height: 340px;
   gap: 10%;
   margin-top: 110px;
@@ -102,6 +103,7 @@ $breakpoint_6: 540px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: flex-start;
     width: 45%;
 
     .project-title {
@@ -264,7 +266,7 @@ $breakpoint_6: 540px;
   .portfolio-shadow-green {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -100px;
 
     img {
       width: 440px;
@@ -281,7 +283,7 @@ $breakpoint_6: 540px;
 
 @media (max-width: $breakpoint_6) {
   .portfolio-container {
-    padding: 110px 25px 150px 25px;
+    padding: 110px 25px 50px 25px;
   }
 
   .portfolio-headline-container {

@@ -14,6 +14,7 @@ $breakpoint_6: 540px;
   min-height: 150px;
   padding-top: 110px;
   margin-top: -110px;
+  overflow: hidden;
 }
 
 .contact-container {
@@ -22,10 +23,10 @@ $breakpoint_6: 540px;
   flex-direction: column;
   align-items: center;
   font-size: 1.6rem;
-  padding-top: calc(13rem + 0px);
+  padding-top: 30px;
   padding-left: 100px;
   padding-right: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 160px;
   z-index: 1;
   width: 100%;
   max-width: 1440px;
@@ -60,14 +61,44 @@ $breakpoint_6: 540px;
     display: flex;
     flex-direction: column;
     width: 40%;
-    border: 1px dotted yellowgreen;
+    // border: 1px dotted yellowgreen;
   }
 
   .contact-form-right {
     width: 60%;
+    height: 550px;
     display: flex;
     // border: 1px dotted red;
     padding-left: 150px;
+    position: relative;
+    z-index: 2;
+
+    label {
+      position: absolute;
+      bottom: -25px;
+      left: 0px;
+      color: var(--text-red);
+      font-size: 1.2rem;
+      padding-top: 10px;
+      transition: all 0.3s ease-in-out;
+      overflow: hidden;
+      height: 0px;
+
+      &:nth-child(4) {
+        width: fit-content;
+        left: unset;
+        right: 0px !important;
+      }
+    }
+
+    .required-note {
+      height: 30px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .mail-success {
+      height: 10px !important;
+    }
 
     form {
       display: flex;
@@ -82,22 +113,29 @@ $breakpoint_6: 540px;
         margin-bottom: 35px;
         width: 100%;
 
-        label {
+        .status-wrapper {
+          display: flex;
           position: absolute;
-          bottom: -25px;
-          left: 0px;
-          color: var(--text-red);
-          font-size: 1.2rem;
-          padding-top: 10px;
-          transition: all 0.3s ease-in-out;
-          overflow: hidden;
-          height: 0px;
-        }
+          right: 25px;
+          top: 14px;
 
-        .required-note {
-          height: 30px;
-          transition: all 0.3s ease-in-out;
+          height: fit-content;
+
+          img {
+            object-fit: cover;
+          }
         }
+        // label {
+        //   position: absolute;
+        //   bottom: -25px;
+        //   left: 0px;
+        //   color: var(--text-red);
+        //   font-size: 1.2rem;
+        //   padding-top: 10px;
+        //   transition: all 0.3s ease-in-out;
+        //   overflow: hidden;
+        //   height: 0px;
+        // }
 
         .resize-wrapper {
           position: absolute;
@@ -148,7 +186,7 @@ $breakpoint_6: 540px;
     textarea {
       appearance: none;
       background-color: transparent;
-      padding: 15px 50px 15px 25px;
+      padding: 15px 55px 15px 25px;
       border: 1px solid var(--purple);
       border-radius: 10px;
       cursor: pointer;
@@ -188,5 +226,91 @@ $breakpoint_6: 540px;
         user-select: none;
       }
     }
+  }
+}
+
+.contact-arrow-wrapper {
+  position: absolute;
+  right: 0px;
+  bottom: -110px;
+}
+
+.contact-shadow-wrapper {
+  position: absolute;
+  bottom: -435px;
+  left: -350px;
+  transform: rotate(254deg);
+}
+
+// ////////////////////////////////////////////////////////
+// Media Queries //////////////////////////////////
+// /((((((((///////////////////////////////////////////////
+
+@media (max-width: $breakpoint_4) {
+  .contact-container {
+    padding: 0px 25px 160px 25px;
+
+    .contact-headline-container {
+      div:nth-child(1) {
+        position: absolute;
+        left: 0px;
+        width: 20px;
+      }
+    }
+
+    .contact-shadow-wrapper {
+      position: absolute;
+      bottom: -582px;
+      left: -355px;
+      transform: rotate(126deg);
+      scale: 0.6;
+    }
+  }
+
+  .contact-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+
+    .contact-form-left,
+    .contact-form-right {
+      width: 100%;
+      padding: 0px;
+    }
+  }
+}
+
+@media (max-width: $breakpoint_6) {
+  .contact-container {
+    padding-bottom: 25px;
+  }
+
+  .contact-form-container {
+    .contact-form-right {
+      .input-field-wrapper {
+        margin-bottom: 25px !important;
+      }
+
+      label:nth-child(4) {
+        bottom: 100px !important;
+      }
+    }
+  }
+
+  .contact-form-container span:nth-child(1) {
+    font-size: 2.3rem;
+    font-weight: 700;
+  }
+  .contact-form-container span:nth-child(2) {
+    margin-top: -20px;
+  }
+
+  .contact-form-right textarea {
+    height: 162px !important;
+  }
+
+  .contact-arrow-wrapper {
+    bottom: 0px !important;
   }
 }

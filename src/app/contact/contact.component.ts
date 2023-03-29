@@ -7,10 +7,6 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
   @ViewChild('contactForm') contactForm: ElementRef | undefined;
-  // @ViewChild('name') name: ElementRef | undefined;
-  // @ViewChild('email') email: ElementRef | undefined;
-  // @ViewChild('message') message: ElementRef | undefined;
-  // @ViewChild('contactButton') contactButton: ElementRef | undefined;
 
   $validName: Boolean = false;
   $validEmail: Boolean = false;
@@ -22,11 +18,12 @@ export class ContactComponent implements OnInit {
   sendButton: any | undefined;
   eventlisteners: any | undefined;
   endpoint: string =
-    'https://stefan-heinemann.developerakademie.net/send_mail/send_mail.php';
+    'https://www.heinemann.berlin/send_mail_portfolio/send_mail.php';
 
   constructor() {}
 
   ngOnInit(): void {
+    /** define event listener and set them */
     this.eventlisteners = [
       {
         name: (this.nameField = document.getElementById('name')),
@@ -41,49 +38,102 @@ export class ContactComponent implements OnInit {
         boolean: this.$validMessage,
       },
     ];
-
     this.setEventListeners(this.eventlisteners);
   }
 
+  /**
+   * set event listeners
+   * @param eventlisteners
+   */
   setEventListeners(eventlisteners: any): void {
+    this.setKeyListeners(eventlisteners);
+    this.setClickListeners(eventlisteners);
+  }
+
+  /**
+   * set key listeners
+   * @param eventlisteners
+   */
+  setKeyListeners(eventlisteners: any): void {
     for (const listener of eventlisteners) {
       listener.name.addEventListener('keyup', () => {
         if (listener.name.value.length > 1) {
           if (listener.name.id === 'email') {
-            console.log('emailField');
             if (this.validateEmail(listener.name)) {
-              listener.boolean = true;
-              listener.name.style = 'border-color: var(--green);';
-              listener.name.nextSibling.classList.remove('required-note');
+              this.setFieldAsTrue(listener);
+            } else {
+              this.setFieldAsFalse(listener);
             }
           } else {
-            listener.boolean = true;
-            listener.name.style = 'border-color: var(--green);';
-            listener.name.nextSibling.classList.remove('required-note');
+            this.setFieldAsTrue(listener);
           }
         } else {
-          listener.boolean = false;
-          listener.name.style = 'border-color: var(--text-red);';
-          listener.name.nextSibling.classList.add('required-note');
-        }
-      });
-      listener.name.addEventListener('click', () => {
-        if (!listener.boolean) {
-          listener.name.style = 'border-color: var(--text-red);';
-          listener.name.nextSibling.classList.add('required-note');
-        }
-      });
-      listener.name.addEventListener('change', () => {
-        console.log('change event');
-
-        if (listener.boolean) {
-          listener.name.style = 'border-color: var(--green);';
-          listener.name.nextSibling.classList.remove('required-note');
+          this.setFieldAsFalse(listener);
         }
       });
     }
   }
 
+  /**
+   * set click listeners
+   * @param eventlisteners
+   */
+  setClickListeners(eventlisteners: any): void {
+    for (const listener of eventlisteners) {
+      listener.name.addEventListener('click', () => {
+        listener.name.parentNode
+          .querySelector('.status-wrapper')
+          .classList.remove('d-none');
+        if (!listener.boolean) {
+          listener.name.style = 'border-color: var(--text-red);';
+          listener.name.nextSibling.classList.add('required-note');
+        }
+      });
+    }
+  }
+
+  /**  set input field as valid */
+  setFieldAsTrue(listener: any): void {
+    listener.boolean = true;
+
+    if (listener.name.id === 'name') {
+      this.$validName = true;
+    }
+    if (listener.name.id === 'email') {
+      this.$validEmail = true;
+    }
+    if (listener.name.id === 'message') {
+      this.$validMessage = true;
+    }
+    listener.name.style = 'border-color: var(--green);';
+    listener.name.nextSibling.classList.remove('required-note');
+    listener.name.parentNode.querySelector('img').src =
+      'assets/img/contact/check.png';
+  }
+
+  /**  set input field as invalid */
+  setFieldAsFalse(listener: any): void {
+    listener.boolean = false;
+    if (listener.name.id === 'name') {
+      this.$validName = false;
+    }
+    if (listener.name.id === 'email') {
+      this.$validEmail = false;
+    }
+    if (listener.name.id === 'message') {
+      this.$validMessage = false;
+    }
+    listener.name.parentNode.querySelector('img').src =
+      'assets/img/contact/exclamation_mark.png';
+    listener.name.style = 'border-color: var(--text-red);';
+    listener.name.nextSibling.classList.add('required-note');
+  }
+
+  /**
+   * validate email
+   * @param email
+   * @returns {boolean}
+   */
   validateEmail(email: any) {
     var validRegex =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -94,31 +144,74 @@ export class ContactComponent implements OnInit {
     }
   }
 
-  sendMail() {
-    let name = this.eventlisteners[0].boolean;
-    let email = this.eventlisteners[1].boolean;
-    let message = this.eventlisteners[2].boolean;
+  /**
+   * send mail
+   */
+  async sendMail() {
+    let nameC = this.contactForm?.nativeElement.name;
+    let emailC = this.contactForm?.nativeElement.email;
+    let messageC = this.contactForm?.nativeElement.message;
+    let sendButtonC = this.contactForm?.nativeElement[3];
 
-    if (name && email && message) {
-      let nameContact = this.contactForm?.nativeElement.name;
-      let emailContact = this.contactForm?.nativeElement.email;
-      let messageContact = this.contactForm?.nativeElement.message;
-      let sendButtonContact = this.contactForm?.nativeElement[3];
-
-      console.log(sendButtonContact);
-      // console.log(this.contactForm.nativeElement.button);
-      console.log(this.contactForm);
-
-      console.log(nameContact.value);
-      console.log(emailContact.value);
-      console.log(messageContact.value);
-
-      nameContact.disabled = true;
-      emailContact.disabled = true;
-      messageContact.disabled = true;
-      sendButtonContact.disabled = true;
-    } else {
-      console.log('input form not valid');
+    if (this.$validName && this.$validEmail && this.$validMessage) {
+      this.disableContactFields(nameC, emailC, messageC, sendButtonC);
+      let formData = new FormData();
+      formData.append('name', nameC.value);
+      formData.append('email', emailC.value);
+      formData.append('message', messageC.value);
+      await fetch(this.endpoint, {
+        method: 'POST',
+        body: formData,
+      });
+      document.querySelector('.sendMessage').classList.add('required-note');
+      this.clearInputFields(nameC, emailC, messageC);
+      this.enableContactFields(nameC, emailC, messageC, sendButtonC);
     }
+  }
+
+  clearInputFields(
+    nameC: { value: string },
+    emailC: { value: string },
+    messageC: { value: string }
+  ) {
+    nameC.value = '';
+    emailC.value = '';
+    messageC.value = '';
+  }
+
+  /**
+   * disable contact fields
+   * @param nameC
+   * @param emailC
+   * @param messageC
+   */
+  disableContactFields(
+    nameContact: { disabled: boolean },
+    emailContact: { disabled: boolean },
+    messageContact: { disabled: boolean },
+    sendButtonContact: { disabled: boolean }
+  ): void {
+    nameContact.disabled = true;
+    emailContact.disabled = true;
+    messageContact.disabled = true;
+    sendButtonContact.disabled = true;
+  }
+
+  /**
+   * enable contact fields
+   * @param nameC
+   * @param emailC
+   * @param messageC
+   */
+  enableContactFields(
+    nameContact: { disabled: boolean },
+    emailContact: { disabled: boolean },
+    messageContact: { disabled: boolean },
+    sendButtonContact: { disabled: boolean }
+  ): void {
+    nameContact.disabled = false;
+    emailContact.disabled = false;
+    messageContact.disabled = false;
+    sendButtonContact.disabled = false;
   }
 }
