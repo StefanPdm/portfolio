@@ -50,6 +50,7 @@ $breakpoint_6: 540px;
     }
     .about-main-text {
       display: flex;
+      z-index: 1;
     }
     .about-special-container {
       display: flex;
@@ -90,7 +91,6 @@ $breakpoint_6: 540px;
       width: fit-content;
       max-width: 450px;
       flex-shrink: 1;
-      // margin-left: 20px;
       object-fit: cover;
     }
 
@@ -139,7 +139,6 @@ $breakpoint_6: 540px;
   .about-me-container {
     padding-left: 25px;
     padding-right: 25px !important;
-    // margin-top: -170px;
 
     .about-left {
       font-size: 1.6rem;

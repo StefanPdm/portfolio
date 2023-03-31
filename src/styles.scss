@@ -232,7 +232,6 @@ select {
 body {
   width: 100%;
   font-family: "Poppins", sans-serif;
-  // font-size: 10px;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -292,7 +291,6 @@ button {
 
   &:hover {
     background-color: var(--purple);
-    // scale: 1;
     padding: 20px 40px;
     transform-origin: center;
   }

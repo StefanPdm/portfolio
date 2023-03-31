@@ -65,14 +65,12 @@ $breakpoint_6: 540px;
     display: flex;
     flex-direction: column;
     width: 40%;
-    // border: 1px dotted yellowgreen;
   }
 
   .contact-form-right {
     width: 60%;
     height: 550px;
     display: flex;
-    // border: 1px dotted red;
     padding-left: 150px;
     position: relative;
     z-index: 2;
@@ -111,9 +109,7 @@ $breakpoint_6: 540px;
       align-items: center;
 
       .input-field-wrapper {
-        // display: flex;
         position: relative;
-        // flex-direction: column;
         margin-bottom: 35px;
         width: 100%;
 
@@ -129,17 +125,6 @@ $breakpoint_6: 540px;
             object-fit: cover;
           }
         }
-        // label {
-        //   position: absolute;
-        //   bottom: -25px;
-        //   left: 0px;
-        //   color: var(--text-red);
-        //   font-size: 1.2rem;
-        //   padding-top: 10px;
-        //   transition: all 0.3s ease-in-out;
-        //   overflow: hidden;
-        //   height: 0px;
-        // }
 
         .resize-wrapper {
           position: absolute;
@@ -153,7 +138,6 @@ $breakpoint_6: 540px;
             right: 3px;
             border: 1px solid var(--purple);
             width: 16px;
-            // height: 16px;
             pointer-events: none;
             border-radius: 25%;
             background-color: transparent;
@@ -198,7 +182,6 @@ $breakpoint_6: 540px;
       border: 1px solid var(--purple);
       border-radius: 10px;
       cursor: pointer;
-      // transition: all 225ms ease-in-out;
       width: 100%;
 
       &:hover {
@@ -223,7 +206,6 @@ $breakpoint_6: 540px;
 
     textarea {
       height: 250px;
-      // position: relative;
       display: block;
       resize: vertical;
       overflow: hidden;

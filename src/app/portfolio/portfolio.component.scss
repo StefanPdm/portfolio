@@ -12,7 +12,6 @@ $breakpoint_6: 540px;
   width: 100%;
   background-color: var(--dark-blue-bg);
   min-height: 150px;
-  // overflow: clip;
   padding-top: 110px;
   margin-top: -110px;
 }
@@ -61,7 +60,6 @@ $breakpoint_6: 540px;
 .project-container {
   display: flex;
   justify-content: flex-end;
-
   max-height: 340px;
   gap: 10%;
   margin-top: 110px;
@@ -115,7 +113,6 @@ $breakpoint_6: 540px;
       font-size: 3.2rem;
       font-weight: 700;
       padding-top: 5px;
-      // margin-bottom: 35px;
     }
 
     .project-languages {
@@ -322,10 +319,5 @@ $breakpoint_6: 540px;
   }
   .portfolio-shadow-purple {
     transform: translate(-50%, 1280px);
-  }
-
-  .portfolio-headline-container {
-    div:nth-child(1) {
-    }
   }
 }

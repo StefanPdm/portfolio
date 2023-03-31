@@ -13,10 +13,7 @@ $breakpoint_6: 540px;
   width: 100%;
   background-color: var(--dark-blue-bg);
   min-height: 290px;
-  // padding-top: 110px;
-  // margin-top: -110px;
   border-top: 4px solid var(--green);
-  // overflow: hidden;
 }
 
 .footer-container {
@@ -173,7 +170,6 @@ $breakpoint_6: 540px;
 @media (max-width: $breakpoint_6) {
   .impressum-container {
     font-size: 1.2rem;
-    // text-align: justify;
     overflow-wrap: anywhere;
 
     .headline {
@@ -186,9 +182,7 @@ $breakpoint_6: 540px;
   }
 
   .close-btn {
-    // display: flex !important;
     position: absolute !important;
-
     top: 10px !important;
     right: 10px !important;
 
