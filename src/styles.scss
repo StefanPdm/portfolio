@@ -1,7 +1,7 @@
 $breakpoint_1: 1410px;
 $breakpoint_2: 1270px;
 $breakpoint_3: 1140px;
-$breakpoint_4: 1000px;
+$breakpoint_4: 1040px;
 $breakpoint_5: 768px;
 $breakpoint_6: 540px;
 
@@ -213,7 +213,6 @@ $breakpoint_6: 540px;
 *::before,
 *::after {
   box-sizing: border-box;
-
   color: var(--text-white);
 }
 
@@ -326,12 +325,13 @@ select:-webkit-autofill:focus {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 8px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 0px grey;
+  background-color: var(--dark-blue-bg);
   border-radius: 10px;
 }
 

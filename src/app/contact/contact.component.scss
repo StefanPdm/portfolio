@@ -24,12 +24,12 @@ $breakpoint_6: 540px;
   align-items: center;
   font-size: 1.6rem;
   padding-top: 30px;
-  padding-left: 100px;
+  padding-left: 150px;
   padding-right: 100px;
   padding-bottom: 160px;
   z-index: 1;
   width: 100%;
-  max-width: 1440px;
+  max-width: 2160px;
 }
 
 .contact-headline-container {
@@ -38,9 +38,13 @@ $breakpoint_6: 540px;
   width: 100%;
   justify-content: flex-start;
   margin-bottom: 30px;
+  position: relative;
 
   div:first-child {
-    width: 50px;
+    position: absolute;
+    left: -150px;
+    top: 50%;
+    width: 100px;
     height: 4px;
     background-color: var(--purple);
     margin-right: 50px;
@@ -49,7 +53,8 @@ $breakpoint_6: 540px;
 
 .contact-form-container {
   display: flex;
-
+  width: 100%;
+  justify-content: space-between;
   align-items: flex-start;
 
   span:nth-child(1) {
@@ -169,6 +174,10 @@ $breakpoint_6: 540px;
           }
         }
       }
+
+      .send-message {
+        color: var(--green) !important;
+      }
     }
 
     button {
@@ -253,7 +262,7 @@ $breakpoint_6: 540px;
     .contact-headline-container {
       div:nth-child(1) {
         position: absolute;
-        left: 0px;
+        left: -25px;
         width: 20px;
       }
     }

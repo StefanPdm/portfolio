@@ -163,7 +163,7 @@ export class ContactComponent implements OnInit {
         method: 'POST',
         body: formData,
       });
-      document.querySelector('.sendMessage').classList.add('required-note');
+      document.querySelector('.send-message').classList.add('required-note');
       this.clearInputFields(nameC, emailC, messageC);
       this.enableContactFields(nameC, emailC, messageC, sendButtonC);
     }

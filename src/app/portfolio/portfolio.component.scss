@@ -29,28 +29,32 @@ $breakpoint_6: 540px;
   padding-right: 100px;
   padding-bottom: 100px;
   z-index: 1;
-  max-width: 1440px;
+  width: 100%;
+  max-width: 2160px;
 
   .portfolio-headline-container {
     display: flex;
-    justify-content: flex-end;
-    position: absolute;
-    top: 0;
-    right: 0;
+    flex-direction: column;
     align-items: center;
-    width: 100%;
+    position: relative;
+    padding: 0 30px;
 
     div:nth-child(1) {
+      position: absolute;
+      top: 50%;
+      left: -30px;
       height: 4px;
       width: calc(100% * 0.075);
       background-color: var(--purple);
       margin-right: 30px;
     }
     div:nth-child(3) {
+      position: absolute;
+      top: 50%;
+      right: -1030px;
       height: 4px;
-      width: calc(100% * 0.34);
+      width: 1000px;
       background-color: var(--purple);
-      margin-left: 30px;
     }
   }
 }
@@ -96,6 +100,7 @@ $breakpoint_6: 540px;
     img {
       object-fit: cover;
       object-position: 0 -65px;
+      height: 380px;
     }
   }
 
@@ -176,6 +181,18 @@ $breakpoint_6: 540px;
 ///////////////////////////////////////////////////////////////////////
 // start meadia section ///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+@media (max-width: $breakpoint_3) {
+  .portfolio-container {
+    padding-top: 0;
+
+    .portfolio-headline-container {
+      span {
+        right: -100px;
+      }
+    }
+  }
+}
+
 @media (max-width: $breakpoint_4) {
   .portfolio-container {
     span {
@@ -256,7 +273,7 @@ $breakpoint_6: 540px;
     position: absolute;
     left: 50%;
     top: 0%;
-    transform: translate(-50%, 1250px);
+    transform: translate(-50%, 1190px);
 
     img {
       width: 300px;
@@ -275,9 +292,28 @@ $breakpoint_6: 540px;
 }
 
 @media (max-width: $breakpoint_5) {
+  .portfolio-wrapper {
+    padding-top: 0 !important;
+  }
+
   .project-description-wrapper {
     width: 100% !important;
     max-width: 100% !important;
+  }
+
+  .portfolio-headline-container {
+    span {
+      right: -130px !important;
+      width: 80% !important;
+      bottom: -50px !important;
+    }
+  }
+
+  .portfolio-shadow-purple {
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, 1090px);
   }
 }
 
@@ -285,17 +321,15 @@ $breakpoint_6: 540px;
   .portfolio-container {
     padding: 110px 25px 50px 25px;
   }
+  .portfolio-shadow-purple {
+    transform: translate(-50%, 1280px);
+  }
 
   .portfolio-headline-container {
     div:nth-child(1) {
       width: calc(100vw * 0.06) !important;
 
       margin-right: 10px !important;
-    }
-    div:nth-child(3) {
-      width: calc(100vw * 0.2) !important;
-
-      margin-left: 10px !important;
     }
   }
 }

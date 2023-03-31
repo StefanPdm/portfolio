@@ -1,6 +1,6 @@
 .header-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   position: fixed;
   width: 100%;
   background-color: var(--dark-blue-bg);
@@ -12,9 +12,9 @@
   justify-content: space-between;
   position: relative;
   align-items: center;
-  padding: 37px 100px;
+  padding: 37px 100px 37px 150px;
   width: 100%;
-  max-width: 1440px;
+  max-width: 2160px;
 }
 .logo {
   width: 220px;

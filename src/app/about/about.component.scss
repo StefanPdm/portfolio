@@ -1,13 +1,13 @@
 $breakpoint_1: 1410px;
 $breakpoint_2: 1270px;
-$breakpoint_3: 1140px;
+$breakpoint_3: 1180px;
 $breakpoint_4: 1000px;
 $breakpoint_5: 768px;
 $breakpoint_6: 540px;
 
 .about-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   background-color: var(--dark-blue-bg);
 }
@@ -15,19 +15,21 @@ $breakpoint_6: 540px;
 .about-me-container {
   display: flex;
   justify-content: space-between;
+  gap: 5%;
   z-index: 3;
   font-size: 1.6rem;
   padding-top: 110px;
   margin-top: -140px;
   width: 100%;
-  max-width: 1440px;
-  padding-left: 100px;
+  max-width: 2160px;
+  padding-left: 150px;
   padding-bottom: 280px;
+  padding-right: 100px;
 
   .about-left {
     display: flex;
     flex-direction: column;
-    width: 455px;
+    width: 520px;
     gap: 35px;
     text-align: justify;
     flex-shrink: 0;
@@ -77,25 +79,25 @@ $breakpoint_6: 540px;
       border-radius: 50%;
       border: 4px solid var(--green);
       z-index: 3;
-      margin-right: 167px;
+      margin-right: 500px;
       width: fit-content;
       max-width: 450px;
       flex-shrink: 1;
-      margin-left: 20px;
+      // margin-left: 20px;
       object-fit: cover;
     }
 
     img:nth-child(2) {
       position: absolute;
       top: -350px;
-      right: -555px;
+      right: -655px;
     }
 
     .about-horizontal-line-green {
       position: absolute;
       top: 50%;
-      right: 0px;
-      width: 167px;
+      right: calc(-100vw + 500px);
+      width: 100vw;
       height: 4px;
       background: var(--green);
     }
@@ -110,18 +112,32 @@ $breakpoint_6: 540px;
     display: flex !important;
   }
 
+  .about-left {
+    width: 100% !important;
+
+    .about-special-container {
+      max-width: 320px;
+    }
+  }
   .about-me-container {
     justify-content: flex-start;
     padding-bottom: 130px;
+    padding-right: 100px !important;
+
+    .about-main-text {
+      width: 100%;
+    }
   }
 }
 @media (max-width: $breakpoint_4) {
+  .about-me-container {
+  }
 }
 
 @media (max-width: $breakpoint_5) {
   .about-me-container {
     padding-left: 25px;
-    padding-right: 25px;
+    padding-right: 25px !important;
     margin-top: -170px;
 
     .about-left {
