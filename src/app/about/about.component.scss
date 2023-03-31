@@ -14,17 +14,24 @@ $breakpoint_6: 540px;
 
 .about-me-container {
   display: flex;
+  position: relative;
   justify-content: space-between;
   gap: 5%;
   z-index: 3;
   font-size: 1.6rem;
-  padding-top: 110px;
-  margin-top: -140px;
+  padding-top: 140px;
+  margin-top: -110px;
   width: 100%;
   max-width: 2160px;
   padding-left: 150px;
   padding-bottom: 280px;
   padding-right: 100px;
+
+  .about-bg {
+    position: absolute;
+    top: -150px;
+    right: -420px;
+  }
 
   .about-left {
     display: flex;
@@ -87,12 +94,6 @@ $breakpoint_6: 540px;
       object-fit: cover;
     }
 
-    img:nth-child(2) {
-      position: absolute;
-      top: -350px;
-      right: -655px;
-    }
-
     .about-horizontal-line-green {
       position: absolute;
       top: 50%;
@@ -138,11 +139,15 @@ $breakpoint_6: 540px;
   .about-me-container {
     padding-left: 25px;
     padding-right: 25px !important;
-    margin-top: -170px;
+    // margin-top: -170px;
 
     .about-left {
       font-size: 1.6rem;
       flex-shrink: 1;
     }
+  }
+
+  .about-bg {
+    right: -490px !important;
   }
 }

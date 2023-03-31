@@ -101,19 +101,13 @@
   right: 25px;
 }
 
-@media (width < 1410px) {
+@media (width < 1450px) {
   .start-text-wrapper {
     font-size: 8px !important;
   }
 }
 
-@media (width < 1270px) {
-}
-
-@media (width < 1140px) {
-}
-
-@media (width < 1000px) {
+@media (width < 1040px) {
   .header {
     padding: 37px 25px;
   }

@@ -4,14 +4,14 @@ $breakpoint_3: 1180px;
 $breakpoint_4: 1040px;
 $breakpoint_5: 768px;
 $breakpoint_6: 540px;
+$breakpoint_7: 370px;
 
 .start-wrapper {
   display: flex;
   justify-content: flex-start;
-  // padding-left: 150px;
   width: 100%;
+  max-height: 100vh;
   background-color: var(--dark-blue-bg);
-  // overflow-x: hidden;
 }
 
 .start-container {
@@ -19,46 +19,82 @@ $breakpoint_6: 540px;
   align-items: flex-start;
   flex-direction: column;
   width: 100%;
+  height: fit-content;
   max-width: 2160px;
-  padding: 130px 100px 0 150px;
+  max-height: 100vh;
+  padding: 130px 100px 100px 150px;
 
   .start-first-row {
     display: flex;
     width: 100%;
     justify-content: flex-start;
     gap: 50px;
+    max-height: 90%;
   }
 
   .start-left-side {
     display: flex;
     position: relative;
+    max-width: 35%;
 
-    img:nth-child(1) {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      height: 700px;
-      z-index: 0;
-      margin-left: -150px;
+    .upper-part {
+      display: flex;
+      height: 100%;
+      width: 100%;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: 3;
+      }
     }
-    img:nth-child(2) {
-      height: 700px;
-      z-index: 3;
-    }
-    img:nth-child(3) {
+
+    .lower-part {
+      display: flex;
       position: absolute;
-      left: 0px;
-      top: 0px;
-      height: 700px;
-      z-index: 1;
+      height: 100%;
+      width: 100%;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
     }
-    img:nth-child(4) {
+
+    .background-shadow {
+      display: flex;
       position: absolute;
-      left: -200px;
-      top: 200px;
-      scale: 2.7 1;
+      height: 100%;
+      width: 100%;
+      transform: translateX(-40%);
+
+      img {
+        height: 100%;
+        // width: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+    }
+
+    .wave-container {
+      display: flex;
+      position: absolute;
+      top: -40%;
+      height: 300%;
+      width: 400%;
+      transform: translateX(-150px);
 
       z-index: 2;
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        scale: 2 1;
+      }
     }
   }
 }
@@ -119,8 +155,9 @@ $breakpoint_6: 540px;
   justify-content: flex-start;
   z-index: 4;
   font-size: 2.3rem;
-  padding-bottom: 150px;
+  // padding-bottom: 150px;
   width: 100%;
+  // max-height: 10%;
 
   .start-second-row-left {
     display: flex;
@@ -188,9 +225,6 @@ $breakpoint_6: 540px;
 }
 
 @media (max-width: $breakpoint_3) {
-  .start-right-side {
-    font-size: 4px !important;
-  }
 }
 
 @media (max-width: $breakpoint_4) {
@@ -202,9 +236,9 @@ $breakpoint_6: 540px;
   }
 
   .start-container {
-    padding: 110px 25px 0 25px;
+    padding: 110px 25px 50px 25px !important;
+    gap: 0px;
 
-    height: unset;
     .start-first-row {
       flex-direction: column;
       align-items: center;
@@ -214,33 +248,23 @@ $breakpoint_6: 540px;
 
   .start-left-side {
     justify-content: center;
-    width: 100%;
+    max-width: 50% !important;
 
-    img:nth-child(1) {
-      //shadow absolut
-      top: 0 !important;
-      left: 50% !important;
-      height: 450px !important;
-      margin-left: -250px !important;
+    .upper-part {
+      width: auto !important;
     }
 
-    img:nth-child(2) {
-      //oberteil releative
-      height: 450px !important;
+    .lower-part {
+      width: auto !important;
     }
 
-    img:nth-child(3) {
-      // unterteil absolut
-      height: 450px !important;
-      top: 0 !important;
-      left: 50% !important;
-      transform: translateX(-50%) !important;
+    .wave-container {
+      top: -25% !important;
     }
-    img:nth-child(4) {
-      // wave
-      top: 200px !important;
-      left: 50% !important;
-      transform: translateX(-50%) !important;
+
+    .background-shadow {
+      width: auto !important;
+      transform: translateX(0px) !important;
     }
   }
   .start-text-wrapper {
@@ -263,6 +287,10 @@ $breakpoint_6: 540px;
   .horizontal-line-purple {
     width: 64px !important;
   }
+
+  .start-left-side {
+    max-width: 60% !important;
+  }
 }
 
 @media (max-width: $breakpoint_6) {
@@ -272,5 +300,19 @@ $breakpoint_6: 540px;
 
   .horizontal-line-purple {
     width: 50px !important;
+  }
+
+  .start-right-side {
+    font-size: 5px !important;
+  }
+}
+
+@media (max-width: $breakpoint_7) {
+  .start-right-side {
+    font-size: 4px !important;
+  }
+
+  .start-second-row-left {
+    gap: 30px !important;
   }
 }
