@@ -271,15 +271,24 @@ $breakpoint_6: 540px;
   }
 }
 
+@media (max-width: $breakpoint_5) {
+  .contact-wrapper {
+    padding-top: 80px !important;
+    margin-top: -80px !important;
+  }
+}
+
 @media (max-width: $breakpoint_6) {
   .contact-container {
     padding-bottom: 25px;
   }
 
   .contact-form-container {
+    gap: 30px !important;
+
     .contact-form-right {
       .input-field-wrapper {
-        margin-bottom: 25px !important;
+        margin-bottom: 15px !important;
       }
 
       label:nth-child(4) {

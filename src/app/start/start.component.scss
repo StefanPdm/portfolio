@@ -34,42 +34,44 @@ $breakpoint_7: 370px;
 
   .start-left-side {
     display: flex;
+    justify-content: center;
     position: relative;
     max-width: 35%;
 
     .upper-part {
       display: flex;
-      height: 100%;
+      justify-content: center;
       width: 100%;
 
       img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
         z-index: 3;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
       }
     }
 
     .lower-part {
       display: flex;
+      justify-content: center;
       position: absolute;
       height: 100%;
       width: 100%;
 
       img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
+        width: auto;
+        height: auto;
         z-index: 1;
       }
     }
 
     .background-shadow {
       display: flex;
+      justify-content: center;
       position: absolute;
       height: 100%;
       width: 100%;
-      transform: translateX(-40%);
 
       img {
         height: 100%;
@@ -80,15 +82,16 @@ $breakpoint_7: 370px;
 
     .wave-container {
       display: flex;
+      justify-content: flex-start;
       position: absolute;
-      top: -85%;
+      top: -68%;
       height: 400%;
       width: 500%;
       transform: translateX(-150px);
       z-index: 2;
 
       img {
-        position: absolute;
+        // position: absolute;
         width: 100%;
         height: 100%;
         scale: 2 1;
@@ -233,8 +236,9 @@ $breakpoint_7: 370px;
   }
 
   .start-container {
-    padding: 110px 25px 50px 25px !important;
+    padding: 110px 25px 75px 25px !important;
     gap: 0px;
+    align-items: center;
 
     .start-first-row {
       flex-direction: column;
@@ -254,25 +258,55 @@ $breakpoint_7: 370px;
   }
 
   .start-left-side {
-    justify-content: center !important;
     max-width: unset !important;
     height: 70% !important;
 
     .upper-part {
       width: auto !important;
+      height: 100%;
+
+      img {
+        width: auto !important;
+        height: 100% !important;
+      }
     }
 
     .lower-part {
       width: auto !important;
+      height: 100% !important;
+
+      img {
+        width: auto !important;
+        height: 100% !important;
+      }
     }
 
     .wave-container {
-      top: -67% !important;
+      top: unset !important;
+      justify-content: center !important;
+      width: 100% !important;
+      height: 100% !important;
+      transform: translateX(0px) !important;
+      left: 0px !important;
+      bottom: -50% !important;
+      transform: translateY(20%);
+
+      img {
+        width: auto !important;
+        height: auto !important;
+        scale: 2 1 !important;
+      }
     }
 
     .background-shadow {
       width: auto !important;
+      height: 100% !important;
       transform: translateX(0px) !important;
+
+      img {
+        //   width: auto!important;
+        //   height: 100%!important;
+      }
     }
   }
 
@@ -294,7 +328,7 @@ $breakpoint_7: 370px;
 
 @media (max-width: $breakpoint_5) {
   .start-container {
-    padding: 80px 25px 25px 25px !important;
+    padding: 80px 25px 75px 25px !important;
   }
 
   .start-text-wrapper {
@@ -332,5 +366,19 @@ $breakpoint_7: 370px;
 
   .start-second-row-left {
     gap: 30px !important;
+  }
+}
+
+@media (width >= 1040px) and (height < 740px) {
+  .wave-container {
+    top: unset !important;
+    bottom: -245%;
+  }
+}
+
+@media (width >= 1040px) and (height < 600px) {
+  .wave-container {
+    top: unset !important;
+    bottom: -260%;
   }
 }
