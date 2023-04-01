@@ -20,7 +20,6 @@ $breakpoint_6: 540px;
   z-index: 3;
   font-size: 1.6rem;
   padding-top: 140px;
-  margin-top: -110px;
   width: 100%;
   max-width: 2160px;
   padding-left: 150px;
@@ -128,10 +127,6 @@ $breakpoint_6: 540px;
     .about-main-text {
       width: 100%;
     }
-  }
-}
-@media (max-width: $breakpoint_4) {
-  .about-me-container {
   }
 }
 

@@ -78,6 +78,7 @@
   align-items: center;
   transform: translateX(100%);
   transition: all 0.3s ease-in-out;
+  z-index: 10;
 
   ul {
     flex-direction: column;
@@ -120,5 +121,11 @@
 
   .logo {
     width: 170px;
+  }
+}
+
+@media (width < 768px) {
+  .header {
+    padding: 25px 25px;
   }
 }
