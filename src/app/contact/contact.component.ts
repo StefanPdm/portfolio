@@ -85,7 +85,7 @@ export class ContactComponent implements OnInit {
           .querySelector('.status-wrapper')
           .classList.remove('d-none');
         if (!listener.boolean) {
-          listener.name.style = 'border-color: var(--text-red);';
+          listener.name.classList.add('red-frame');
           listener.name.nextSibling.classList.add('required-note');
         }
       });
@@ -105,7 +105,8 @@ export class ContactComponent implements OnInit {
     if (listener.name.id === 'message') {
       this.$validMessage = true;
     }
-    listener.name.style = 'border-color: var(--green);';
+    listener.name.classList.add('green-frame');
+    listener.name.classList.remove('red-frame');
     listener.name.nextSibling.classList.remove('required-note');
     listener.name.parentNode.querySelector('img').src =
       'assets/img/contact/check.png';
@@ -125,7 +126,8 @@ export class ContactComponent implements OnInit {
     }
     listener.name.parentNode.querySelector('img').src =
       'assets/img/contact/exclamation_mark.png';
-    listener.name.style = 'border-color: var(--text-red);';
+    listener.name.classList.remove('green-frame');
+    listener.name.classList.add('red-frame');
     listener.name.nextSibling.classList.add('required-note');
   }
 
@@ -134,7 +136,7 @@ export class ContactComponent implements OnInit {
    * @param email
    * @returns {boolean}
    */
-  validateEmail(email: any) {
+  validateEmail(email: any): boolean {
     var validRegex =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (email.value.match(validRegex)) {

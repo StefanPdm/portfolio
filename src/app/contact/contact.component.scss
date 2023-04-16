@@ -26,7 +26,7 @@ $breakpoint_6: 540px;
   padding-left: 150px;
   padding-right: 100px;
   padding-bottom: 160px;
-  z-index: 1;
+  z-index: 3;
   width: 100%;
   max-width: 2160px;
 }
@@ -206,6 +206,7 @@ $breakpoint_6: 540px;
 
     textarea {
       height: 250px;
+      max-height: 400px;
       display: block;
       resize: vertical;
       overflow: hidden;
@@ -230,6 +231,14 @@ $breakpoint_6: 540px;
   bottom: -435px;
   left: -350px;
   transform: rotate(254deg);
+}
+
+.green-frame {
+  border-color: var(--green) !important;
+}
+
+.red-frame {
+  border-color: var(--text-red) !important;
 }
 
 // ////////////////////////////////////////////////////////
@@ -287,12 +296,16 @@ $breakpoint_6: 540px;
     gap: 30px !important;
 
     .contact-form-right {
+      label {
+        bottom: -19px !important;
+        font-size: 1rem !important;
+      }
       .input-field-wrapper {
         margin-bottom: 15px !important;
       }
 
       label:nth-child(4) {
-        bottom: 100px !important;
+        bottom: 150px !important;
       }
     }
   }
