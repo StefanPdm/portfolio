@@ -58,28 +58,40 @@ $breakpoint_6: 540px;
     text-align: center;
     font-weight: 700;
     z-index: 2;
+    transition: all 0.3s ease-in-out;
 
     img {
       height: 56px;
+      transition: all 0.3s ease-in-out;
+      animation: icon-turn 8s linear infinite;
     }
 
     &:hover {
       img {
-        animation: icon-jump 300ms ease-in-out;
+        // animation: icon-turn 4s linear infinite;
+        // transition: all 0.3s ease-in-out;
+        // transform: perspective(600px) rotateY(-180deg) scale(1.15)
+        //   translateY(-15px);
       }
     }
   }
 }
 
-@keyframes icon-jump {
+@keyframes icon-turn {
   0% {
-    transform: translateY(0);
+    transform: perspective(600px) rotateY(0deg);
+  }
+  25% {
+    transform: perspective(600px) rotateY(-180deg);
   }
   50% {
-    transform: translateY(-10px);
+    transform: perspective(600px) rotateY(-360deg);
+  }
+  75% {
+    transform: perspective(600px) rotateY(-180deg);
   }
   100% {
-    transform: translateY(0);
+    transform: perspective(600px) rotateY(-360deg);
   }
 }
 
