@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-start',
@@ -15,6 +15,8 @@ export class StartComponent implements OnInit {
   canvas: HTMLCanvasElement;
   ctx: CanvasRenderingContext2D;
 
+  @Input() language: string;
+
   ngOnInit() {
     this.canvas = document.querySelector('canvas');
     this.ctx = this.canvas.getContext('2d')!;
@@ -22,6 +24,7 @@ export class StartComponent implements OnInit {
     this.canvas.height = window.innerHeight;
     // this.canvas.height = document.querySelector('start-wrapper').offsetHight;
     this.hue = 0;
+    console.log(this.language);
 
     window.addEventListener('mousemove', (e) => {
       this.mouse.x = e.x;
@@ -35,7 +38,6 @@ export class StartComponent implements OnInit {
     window.addEventListener('resize', () => {
       this.canvas.width = window.innerWidth;
       this.canvas.height = document.querySelector('canvas').height;
-      console.log(this.canvas.width, this.canvas.height);
     });
 
     window.addEventListener('mouseout', () => {

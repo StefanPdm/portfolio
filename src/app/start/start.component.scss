@@ -195,7 +195,8 @@ $breakpoint_7: 370px;
   .start-second-row-right {
     display: flex;
     position: absolute;
-    right: -70px;
+    transform-origin: right;
+    right: 0px;
     top: 70px;
     gap: 5px;
     rotate: 90deg;

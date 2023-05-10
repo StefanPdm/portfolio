@@ -1,7 +1,9 @@
 <div class="skills-wrapper">
   <div class="skills-container" id="skills">
     <a href="#contact" class="desktop-none">
-      <button>Get in touch</button></a>
+      <button *ngIf="language === 'en'">Get in touch</button>
+      <button *ngIf="language === 'de'">Kontaktiere mich</button>
+    </a>
     <div class="skills-left">
       <div class="skills-icon-container">
         <img src="assets/img/skills/icon_angular.png" alt="angular">
@@ -47,14 +49,20 @@
     </div>
     <div class="skills-right" id="skills-mobile">
       <div class="headline">
-        <span> My skills</span>
+        <span *ngIf="language === 'en'"> My skills</span>
+        <span *ngIf="language === 'de'"> Meine Skills</span>
         <div class="skills-horizontal-line"></div>
       </div>
       <div>
-        I have gained experience in building projects with various front-end technologies and
-        concepts.
+        <span *ngIf="language === 'en'">I have gained experience in building projects with various
+          front-end technologies and concepts.</span>
+        <span *ngIf="language === 'de'">Bei der Erstellung meiner Projekte habe ich viele
+          Erfahrungen mit den Konzepten der Frontend-Technologien und Frameworks gesammelt.</span>
       </div>
-      <a href="#contact"><button class="mobile-none">Get in touch</button></a>
+      <a href="#contact" *ngIf="language === 'en'"><button class="mobile-none">Get in
+          touch</button></a>
+      <a href="#contact" *ngIf="language === 'de'"><button class="mobile-none">Kontaktiere
+          mich</button></a>
     </div>
   </div>
 </div>

@@ -48,8 +48,12 @@ $breakpoint_6: 540px;
       width: fit-content;
     }
     .about-main-text {
-      display: flex;
+      display: inline-block;
       z-index: 1;
+      a {
+        color: var(--purple);
+        display: inline-block;
+      }
     }
     .about-special-container {
       display: flex;

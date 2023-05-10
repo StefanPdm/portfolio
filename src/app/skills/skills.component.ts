@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
@@ -10,6 +10,7 @@ export class SkillsComponent implements OnInit {
     x: 0,
     y: 0,
   };
+  @Input() language: string;
 
   ngOnInit() {
     const skillsContainer = document.getElementById('skills');

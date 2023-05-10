@@ -2,8 +2,10 @@
   <div class="about-me-container" id="about">
     <img class="about-bg" src="assets/img/start/shadow_purple_about.png" alt="background-shadow">
     <div class="about-left">
-      <div class="headline">About me</div>
-      <div class="about-main-text">After over 20 years of running my own business in interior design
+      <div *ngIf="language === 'en'" class="headline">About me</div>
+      <div *ngIf="language === 'de'" class="headline">Über mich</div>
+      <div *ngIf="language === 'en'" class="about-main-text">After over 20 years of running my own
+        business in interior design
         with up to 20 employees, it was time to do something different. <br> I remembered my early
         enthusiasm for programming and decided to make it my new soul task. <br> So I began to study
         many areas of IT like system integration, cryptography, coding and web design. <br> Finally,
@@ -11,17 +13,41 @@
         2022, I was good enough to offer my services to the world as a
         freelancer: Hello world.
       </div>
+      <div *ngIf="language === 'de'" class="about-main-text">Nach über 20 Jahren als Unternehmer im
+        Bereich
+        Interieur Design (3 Filialen und über 20 Mitarbeiter), war es an der Zeit seine
+        Komfortzone zu verlassen und etwas Neues zu wagen.<br>
+        Ich besann mich auf meine frühes Interesse an der Programmierung (C64) und entdeckte in
+        Ihr meine eigentliche große Leidenschaft wieder.<br>
+        Meine Ausbildung startete zunächst im Selbststudium. Später begann ich eine Berufsausbildung
+        für
+        Systemintegration und schließlich ein Studium zum Fullstack Developer an der
+        <a href="https://developerakademie.com/" target="_blank">Developer Akademie München.</a> Im
+        April 2023
+        wurde ich als Frontend Developer zertifiziert und im Januar
+        2024
+        folgt der Abschluss als Backend Developer.<br>
+        Nun bin ich auf der Suche nach interessanten neuen Projekten und kann sagen: Hello world.
+      </div>
       <div class="about-special-container">
         <div class="about-special-text">
           <div style="display: inline-block;"><img src="assets/img/start/icon_bulp_green.svg"
-              alt="">
+              alt="bump">
           </div>
-          <div>A Special interest of work with Photoshop and Figma.
+          <div>
+            <div *ngIf="language === 'en'">A Special interest of work with Photoshop and Figma.
+            </div>
+            <div *ngIf="language === 'de'">Ich schätze cleanen Code und gutes Grafik-Design, daher
+              gerne auch Jobs mit Photoshop, Figma u.ä.</div>
           </div>
         </div>
         <div class="about-special-text">
-          <div><img src="assets/img/start/icon_puzzle_green.png" alt=""></div>
-          <div>Feel free to ask me for jobs as scrum master or product owner.
+          <div><img src="assets/img/start/icon_puzzle_green.png" alt="puzzle"></div>
+          <div>
+            <div *ngIf="language === 'en'">Feel free to ask me for jobs as scrum master or product
+              owner.</div>
+            <div *ngIf="language === 'de'">Gerne auch Anfragen bezüglich Jobs als Product Owner oder
+              Scrum Master.</div>
           </div>
         </div>
       </div>

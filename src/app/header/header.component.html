@@ -53,7 +53,8 @@
     <div class="menu-desktop mobile-none">
       <ul>
         <li>
-          <a href="#about">About me</a>
+          <a *ngIf="language === 'en'" href="#about">About me</a>
+          <a *ngIf="language === 'de'" href="#about">Über mich</a>
         </li>
         <li>
           <a href="#skills">Skills</a>
@@ -61,9 +62,15 @@
         <li>
           <a href="#portfolio">Portfolio</a>
         </li>
+        <li>
+          <a *ngIf="language === 'de'" (click)="toggleLanguage()"><img
+              src="./assets/img/header/united-kingdom.png" alt="english"></a>
+          <a *ngIf="language === 'en'" (click)="toggleLanguage()"><img
+              src="./assets/img/header/germany.png" alt="english"></a>
+        </li>
       </ul>
     </div>
-    <div class="menu-mobile desktop-none">
+    <div class=" menu-mobile desktop-none">
       <img id="burger" class="" src="/assets/img/header/burger_1.svg" alt="burger-menu"
         (click)="toggleMobileMenu('burger')">
       <div class="mobile-menu-container" id="mobile-menu">
@@ -80,6 +87,13 @@
           <li>
             <a href="#contact" (click)="toggleMobileMenu('burger')">Contact</a>
           </li>
+          <li>
+            <a *ngIf="language === 'de'" (click)="toggleLanguage(); toggleMobileMenu('burger')"><img
+                src="./assets/img/header/united-kingdom.png" alt="english"></a>
+            <a *ngIf="language === 'en'" (click)="toggleLanguage(); toggleMobileMenu('burger')"><img
+                src="./assets/img/header/germany.png" alt="english"></a>
+          </li>
+
         </ul>
         <img src="assets/img/header/icon_close.svg" alt="close" class="menu-close-button"
           (click)="toggleMobileMenu('burger')">

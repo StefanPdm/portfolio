@@ -260,7 +260,8 @@ li {
 a {
   color: var(--text-white);
   text-decoration: none;
-  display: inline-block;
+  display: flex;
+  cursor: pointer;
 }
 
 .mobile-none {

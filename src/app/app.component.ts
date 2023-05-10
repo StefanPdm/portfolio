@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sh-portfolio';
+  language = 'de';
+
+  onLanguageChanged(event: any) {
+    console.log('Language changed to: ' + event.language);
+    this.language = event.language;
+  }
 }

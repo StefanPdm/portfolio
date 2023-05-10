@@ -24,7 +24,8 @@
             <span class="horziontal-second-line">Frontend developer</span>
           </div>
         </div>
-        <a href="#contact"><button>Let's talk</button></a>
+        <a href="#contact" *ngIf="language === 'de'"><button>Kontaktiere mich</button></a>
+        <a href="#contact" *ngIf="language === 'en'"><button>Let's talk</button></a>
       </div>
     </div>
     <div class="start-second-row">
@@ -43,7 +44,8 @@
         </div>
       </div>
       <div class="start-second-row-right mobile-none">
-        <div>Scroll down</div>
+        <div *ngIf="language === 'en'">Scroll down</div>
+        <div *ngIf="language === 'de'">Bitte runter scrollen</div>
         <div><img src="assets/img/start/arrow_pure.png" alt=""></div>
       </div>
     </div>
