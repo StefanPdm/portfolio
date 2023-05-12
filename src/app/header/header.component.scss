@@ -4,7 +4,7 @@
   position: fixed;
   width: 100%;
   background-color: var(--dark-blue-bg);
-  z-index: 10;
+  z-index: 100;
 }
 
 .header {
@@ -85,7 +85,7 @@
   align-items: center;
   transform: translateX(100%);
   transition: all 0.3s ease-in-out;
-  z-index: 10;
+  z-index: 100;
 
   ul {
     flex-direction: column;
