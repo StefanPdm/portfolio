@@ -8,10 +8,16 @@ import { Component, Input } from '@angular/core';
 export class FooterComponent {
   @Input() language: string;
 
+  /**
+   * hover effect logo
+   */
   hover() {
     document.getElementById('i-point-footer')?.setAttribute('width', '249px');
   }
 
+  /**
+   * dehover effect logo
+   */
   dehover() {
     document.getElementById('i-point-footer')?.setAttribute('width', '7.42px');
   }

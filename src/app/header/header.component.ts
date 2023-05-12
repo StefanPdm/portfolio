@@ -9,11 +9,17 @@ export class HeaderComponent {
   language = 'de';
   @Output() languageChanged = new EventEmitter<{ language: string }>();
 
+  /**
+   * hover effect logo
+   */
   hover() {
     document.getElementById('i-point')?.setAttribute('width', '249px');
     document.getElementById('i-point')?.setAttribute('height', '7px');
   }
 
+  /**
+   * dehover effect logo
+   */
   dehover() {
     document.getElementById('i-point')?.setAttribute('width', '7.42px');
     document.getElementById('i-point')?.setAttribute('height', '8.14px');
@@ -27,6 +33,5 @@ export class HeaderComponent {
   toggleLanguage() {
     this.language === 'de' ? (this.language = 'en') : (this.language = 'de');
     this.languageChanged.emit({ language: this.language });
-    //  this.language ? (this.language = 'en') : (this.language = 'en');
   }
 }

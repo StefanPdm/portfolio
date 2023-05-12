@@ -27,7 +27,6 @@ export class StartComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['language'].currentValue === 'en') {
-      // console.log(changes['language'].currentValue);
       this.resizeTextElement.innerText = 'I am';
       this.resizeText();
     }
@@ -35,7 +34,6 @@ export class StartComponent implements OnInit, OnChanges {
       changes['language'].currentValue === 'de' &&
       changes['language'].previousValue === 'en'
     ) {
-      // console.log(changes['language'].currentValue);
       this.resizeTextElement.innerText = 'Ich bin';
       this.resizeText();
     }
@@ -73,6 +71,9 @@ export class StartComponent implements OnInit, OnChanges {
     this.resizeText();
   }
 
+  /**
+   * handle particles movement of cursor trail
+   */
   handleParticle() {
     for (let i = 0; i < this.spots.length; i++) {
       this.spots[i].update();
@@ -97,6 +98,12 @@ export class StartComponent implements OnInit, OnChanges {
     }
   }
 
+  /**
+   * animate cursor trail
+   * @param ctx
+   * @param canvas
+   * @param hue
+   */
   animate(ctx, canvas, hue) {
     ctx.clearRect(0, 0, canvas.width, canvas.height)!;
     this.handleParticle();
@@ -104,31 +111,32 @@ export class StartComponent implements OnInit, OnChanges {
     requestAnimationFrame(() => this.animate(ctx, canvas, hue));
   }
 
+  /**
+   * check overflow of text element
+   */
   isOverflown = (parentHeight, elementWidth) => elementWidth > parentHeight;
 
+  /**
+   * resize text element 'ich bin' and 'I am' to fit height of name element
+   */
   resizeText() {
     this.resizeTextElement = document.querySelector('.start-vertical-text');
     let minSize = 5;
     let maxSize = 50;
     let step = 0.1;
     let unit = 'px';
-
     let i = minSize;
     let overflow = false;
     let el = this.resizeTextElement;
-    console.log(el.innerText);
-
     const parent = this.resizeTextElement.parentNode;
 
     while (!overflow && i < maxSize) {
-      console.clear();
-      console.log('WHILE i=', i);
       el.style.fontSize = `${i}${unit}`;
       overflow = this.isOverflown(parent.clientHeight, el.clientWidth);
 
       if (!overflow) i += step;
     }
-    console.log(window.innerWidth);
+
     if (window.innerWidth <= 1320) {
       el.style.fontSize = `${i - step * 27}${unit}`;
     } else {
@@ -137,6 +145,9 @@ export class StartComponent implements OnInit, OnChanges {
   }
 }
 
+/**
+ * set class and functions for cursor particles
+ */
 class Particle {
   x: any;
   y: any;
@@ -146,7 +157,11 @@ class Particle {
   color: string;
   hue: number;
   ctx: any;
-  constructor(mouse, hue, ctx) {
+  constructor(
+    mouse: { x: any; y: any },
+    hue: number,
+    ctx: CanvasRenderingContext2D
+  ) {
     this.x = mouse.x;
     this.y = mouse.y;
     this.hue = hue;

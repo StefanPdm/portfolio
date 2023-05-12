@@ -27,20 +27,21 @@
       <div class="contact-form-right">
         <form (submit)="sendMail()" #contactForm autocomplete="off" method="post" action="/form">
           <div class="input-field-wrapper">
-            <input role="presentation" contenteditable="true" type="text" placeholder="Deine Name"
-              name="name" #name id="name">
-            <!-- <input *ngIf="language === 'de'" role="presentation" contenteditable="true" type="text"
-              placeholder="Deine Name" name="name" #name id="name"> -->
-            <label for="name">Danke für deinen Namen.</label>
-            <!-- <label *ngIf="language === 'de'" for="name">Deinen Namen bitte</label> -->
+            <input role="presentation" contenteditable="true" type="text"
+              placeholder="{{language === 'en' ? 'Your Name' : 'Dein Name'}}" name="name" #name
+              id="name">
+            <label for="name">{{language === 'en' ? 'Your name is required.' : 'Danke für deinen
+              Namen.'}}</label>
             <div class="status-wrapper d-none">
               <img src="assets/img/contact/exclamation_mark.png" alt="status sign">
             </div>
           </div>
           <div class="input-field-wrapper">
-            <input role="presentation" type="email" placeholder="Deine email" name="email" #email
+            <input role="presentation" type="email"
+              placeholder="{{language === 'en' ? 'Your email' : 'Deine Email'}}" name="email" #email
               id="email">
-            <label for="email">Danke für deine gültige email.</label>
+            <label for="email">{{language === 'en' ? 'Your email is required.' : 'Danke für deine
+              gültige email.'}}</label>
             <div class="status-wrapper d-none">
               <img src="assets/img/contact/exclamation_mark.png" alt="status sign">
             </div>
@@ -49,9 +50,11 @@
             <div class="resize-wrapper">
               <div class="pull-tab"></div>
             </div>
-            <textarea role="presentation" placeholder="Dein Anliegen" name="message" #message
-              id="message"></textarea>
-            <label for="message">Danke für eine interessante Nachricht.</label>
+            <textarea role="presentation"
+              placeholder="{{language === 'en' ? 'Your message' : 'Dein Anliegen'}}" name="message"
+              #message id="message"></textarea>
+            <label for="message">{{language === 'en' ? 'Your message please.' : 'Danke für dein
+              Interesse.'}}</label>
             <div class="status-wrapper d-none">
               <img src="assets/img/contact/exclamation_mark.png" alt="status sign">
             </div>

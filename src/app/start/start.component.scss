@@ -91,7 +91,6 @@ $breakpoint_7: 370px;
       z-index: 2;
 
       img {
-        // position: absolute;
         width: 100%;
         height: 100%;
         scale: 2 1;
@@ -131,7 +130,6 @@ $breakpoint_7: 370px;
       text-align: start;
       color: var(--green);
       height: 50%;
-      // border: 1px solid yellow;
       position: absolute;
       left: calc(120px - 5px);
       bottom: 7px;
@@ -140,7 +138,6 @@ $breakpoint_7: 370px;
     .start-horizontal-text {
       display: flex;
       flex-direction: column;
-      // text-align: end;
       font-size: 1em;
 
       span:nth-child(1) {

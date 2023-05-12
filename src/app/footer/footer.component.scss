@@ -41,7 +41,6 @@ $breakpoint_6: 540px;
     }
 
     .logo-footer {
-      // width: 220px;
       z-index: 1;
 
       svg {
@@ -121,8 +120,6 @@ $breakpoint_6: 540px;
   opacity: 0.99;
   z-index: 10;
   font-size: 1.6rem;
-  //  transform: translateX(110%);
-  //  transition: all 0.3s ease-in-out;
   overflow-y: scroll;
   overflow-x: hidden;
 
@@ -206,8 +203,6 @@ $breakpoint_6: 540px;
   .close-btn {
     position: absolute !important;
     bottom: 91vh !important;
-    // top: 10px !important;
-    // right: 10px !important;
 
     img {
       width: 20px;
