@@ -41,9 +41,13 @@
       <div class="project-description-wrapper">
         <div class="project-title">El pollo loco</div>
         <div class="project-languages"> HTML | CSS | JS</div>
-        <div class="project-description">A simple Jump-and-Run game based on an object-oriented
+        <div *ngIf="language === 'en'" class="project-description">A simple Jump-and-Run game based
+          on an object-oriented
           approach. Help Pepe to find coins and
           salsa bottles to fight against the big boss chicken.</div>
+        <div *ngIf="language === 'de'" class="project-description">Ein einfaches Jump-and-Run Spiel
+          mit objektorientierter Programmierung. Hilf unserem Freund Pepe Münzen und Salsaflaschen
+          zu sammeln, um erfolgreich gegen den Endboss zu kämpfen.</div>
         <div class="project-button-wrapper">
           <a class="button-live"
             href="https://stefan-heinemann.developerakademie.net/EPL/index.html"
@@ -61,9 +65,13 @@
       <div class="project-description-wrapper">
         <div class="project-title">Ring of fire</div>
         <div class="project-languages"> HTML | SCSS | JS | Angular | Firebase</div>
-        <div class="project-description">The "ring of fire" drinking game is an easy and popular
+        <div *ngIf="language === 'en'" class="project-description">The "ring of fire" drinking game
+          is an easy and popular
           game that can be played with a group of
           friends. The game is simple - all you need is a deck of cards and some alcohol.</div>
+        <div *ngIf="language === 'de'" class="project-description">"Ring of fire" ist ein einfaches
+          und bekanntes Trinkspiel und wird am besten in einer goßen Gruppe gespielt. Alles was du
+          brauchst sind Freunde und viel Alkohol.</div>
         <div class="project-button-wrapper">
           <a class="button-live" href="https://sh-ringoffire.web.app/" target="_blank"><button>Live
               test</button></a>
@@ -80,8 +88,12 @@
       <div class="project-description-wrapper">
         <div class="project-title">Design ohne Zukunft</div>
         <div class="project-languages"> WordPress | CSS</div>
-        <div class="project-description">Simple WordPress Site with unique logo design and colour
+        <div *ngIf="language === 'en'" class="project-description">Simple WordPress Site with unique
+          logo design and colour
           design study.
+        </div>
+        <div *ngIf="language === 'de'" class="project-description">Einfache WordPress Seite mit
+          selbst entworfenen Logo und Farkonzept.
         </div>
         <div class="project-button-wrapper">
           <a class="button-live" href="https://www.stefan-heinemann.eu/"
@@ -97,9 +109,14 @@
       <div class="project-description-wrapper">
         <div class="project-title">Ford Mustang mieten</div>
         <div class="project-languages">Typo3 | CSS | HTML | Typescript</div>
-        <div class="project-description">This is one of my oldest projects. Started with help of
+        <div *ngIf="language === 'en'" class="project-description">This is one of my oldest
+          projects. Started with help of
           some friends 6 years ago. In the meantime, I not only look after this site, but of course
           I rent out this beautiful classic car as well.
+        </div>
+        <div *ngIf="language === 'de'" class="project-description">Diese Webseite ist eines meiner
+          älteren Projekte. Mit der Hilfe von Bekannten vor 6 Jahren erstellt, betreibe und warte
+          ich sie nun selbst. Natürlich kann der wunderschöne Oldtimer auch gemietet werden.
         </div>
         <div class="project-button-wrapper">
           <a class="button-live" href="https://www.mustang-mieten.berlin/"
@@ -113,10 +130,16 @@
           alt="portfolio screenshot">
       </div>
       <div class="project-description-wrapper">
-        <div class="project-title">Portfolio Legacy Site</div>
+        <div *ngIf="language === 'en'" class="project-title">Portfolio Legacy Site</div>
+        <div *ngIf="language === 'de'" class="project-title">Portfolio (alt)</div>
         <div class="project-languages">JS | CSS | HTML</div>
-        <div class="project-description">My first attempt at programming a portfolio website, a few
+        <div *ngIf="language === 'en'" class="project-description">My first attempt at programming a
+          portfolio website, a few
           weeks after starting my studies at the Developer Academy.
+        </div>
+        <div *ngIf="language === 'de'" class="project-description">Dies war nach einigen Wochen an
+          der Developer Akademie mein erster Versuch eine Portfolio Seite zu programmieren. Wäre
+          doch schade sie zu "entsorgen".
         </div>
         <div class="project-button-wrapper">
           <a class="button-live" href="https://www.heinemann.berlin/portfolio_legacy/index.html"
@@ -135,7 +158,8 @@
 
       </div>
       <div class="project-description-wrapper">
-        <div class="project-title">Canvas Experimentation</div>
+        <div *ngIf="language === 'en'" class="project-title">Canvas Experimentation</div>
+        <div *ngIf="language === 'de'" class="project-title">Canvas Experimente</div>
         <div class="project-languages">JS | CSS | HTML</div>
         <div *ngIf="language=== 'en'" class="project-description">Inspired by Franks laboratory I
           played with some interactive Canvas containers with using of object orientation. See

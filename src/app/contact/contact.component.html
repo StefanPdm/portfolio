@@ -2,34 +2,45 @@
   <div class="contact-container">
     <div class="contact-headline-container">
       <div></div>
-      <div class="headline">Contact</div>
+      <div *ngIf="language === 'en'" class="headline">Contact</div>
+      <div *ngIf="language === 'de'" class="headline">Kontakt</div>
     </div>
     <div class="contact-form-container">
       <div class="contact-form-left">
-        <span>
+        <span *ngIf="language === 'en'">
           Got a problem to solve? <br><br>
+        </span> <span *ngIf="language === 'de'">
+          Wie darf ich helfen? <br><br>
         </span>
-        <span>
+        <span *ngIf="language === 'en'">
           Contact me through this form, I am interested in hearing you, knowing your ideas and
           contributing to
           your projects with my work. <br><br>
           Need a front-end developer? <strong>Contact me!</strong>
         </span>
+        <span *ngIf="language === 'de'">
+          Bitte benutze jetzt einfach das Kontaktformular, um mir von deinen Ideen und Projekten zu
+          berichten. <br><br>
+          Front-end Developer gesucht? <strong>Jetzt schreiben!</strong>
+        </span>
       </div>
       <div class="contact-form-right">
         <form (submit)="sendMail()" #contactForm autocomplete="off" method="post" action="/form">
           <div class="input-field-wrapper">
-            <input role="presentation" contenteditable="true" type="text" placeholder="Your name"
+            <input role="presentation" contenteditable="true" type="text" placeholder="Deine Name"
               name="name" #name id="name">
-            <label for="name">Your name is required</label>
+            <!-- <input *ngIf="language === 'de'" role="presentation" contenteditable="true" type="text"
+              placeholder="Deine Name" name="name" #name id="name"> -->
+            <label for="name">Danke für deinen Namen.</label>
+            <!-- <label *ngIf="language === 'de'" for="name">Deinen Namen bitte</label> -->
             <div class="status-wrapper d-none">
               <img src="assets/img/contact/exclamation_mark.png" alt="status sign">
             </div>
           </div>
           <div class="input-field-wrapper">
-            <input role="presentation" type="email" placeholder="Your email" name="email" #email
+            <input role="presentation" type="email" placeholder="Deine email" name="email" #email
               id="email">
-            <label for="email">Your email is not valid</label>
+            <label for="email">Danke für deine gültige email.</label>
             <div class="status-wrapper d-none">
               <img src="assets/img/contact/exclamation_mark.png" alt="status sign">
             </div>
@@ -38,21 +49,27 @@
             <div class="resize-wrapper">
               <div class="pull-tab"></div>
             </div>
-            <textarea role="presentation" placeholder="Your message" name="message" #message
+            <textarea role="presentation" placeholder="Dein Anliegen" name="message" #message
               id="message"></textarea>
-            <label for="message">Your message is empty</label>
+            <label for="message">Danke für eine interessante Nachricht.</label>
             <div class="status-wrapper d-none">
               <img src="assets/img/contact/exclamation_mark.png" alt="status sign">
             </div>
           </div>
-          <label class="send-message">
+          <label *ngIf="language === 'en'" class="send-message">
             Your contact request has been sent.
           </label>
-          <button
+          <label *ngIf="language === 'de'" class="send-message">
+            Deine Anfrage wurde dankend empfangen.
+          </label>
+          <button *ngIf="language === 'en'"
             [disabled]="!this.eventlisteners[0].boolean || !this.eventlisteners[1].boolean || !this.eventlisteners[2].boolean"
             type="submit" #contactButton>Send
             message
             :&#41;</button>
+          <button *ngIf="language === 'de'"
+            [disabled]="!this.eventlisteners[0].boolean || !this.eventlisteners[1].boolean || !this.eventlisteners[2].boolean"
+            type="submit" #contactButton>Senden :&#41;</button>
         </form>
         <div class="contact-arrow-wrapper">
           <a href="#">
