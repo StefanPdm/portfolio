@@ -10,7 +10,6 @@ export class AppComponent {
   language = 'de';
 
   onLanguageChanged(event: any) {
-    console.log('Language changed to: ' + event.language);
     this.language = event.language;
   }
 }

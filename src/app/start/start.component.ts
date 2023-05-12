@@ -1,11 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   selector: 'app-start',
   templateUrl: './start.component.html',
   styleUrls: ['./start.component.scss'],
 })
-export class StartComponent implements OnInit {
+export class StartComponent implements OnInit, OnChanges {
   spots = [];
   hue: any;
   mouse = {
@@ -14,17 +20,34 @@ export class StartComponent implements OnInit {
   };
   canvas: HTMLCanvasElement;
   ctx: CanvasRenderingContext2D;
+  resizeTextElement: any;
+  text: String = 'Ich bin';
 
   @Input() language: string;
 
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['language'].currentValue === 'en') {
+      // console.log(changes['language'].currentValue);
+      this.resizeTextElement.innerText = 'I am';
+      this.resizeText();
+    }
+    if (
+      changes['language'].currentValue === 'de' &&
+      changes['language'].previousValue === 'en'
+    ) {
+      // console.log(changes['language'].currentValue);
+      this.resizeTextElement.innerText = 'Ich bin';
+      this.resizeText();
+    }
+  }
+
   ngOnInit() {
+    this.resizeTextElement = document.querySelector('.start-vertical-text');
     this.canvas = document.querySelector('canvas');
     this.ctx = this.canvas.getContext('2d')!;
     this.canvas.width = document.body.offsetWidth;
     this.canvas.height = window.innerHeight;
-    // this.canvas.height = document.querySelector('start-wrapper').offsetHight;
     this.hue = 0;
-    console.log(this.language);
 
     window.addEventListener('mousemove', (e) => {
       this.mouse.x = e.x;
@@ -38,6 +61,7 @@ export class StartComponent implements OnInit {
     window.addEventListener('resize', () => {
       this.canvas.width = window.innerWidth;
       this.canvas.height = document.querySelector('canvas').height;
+      this.resizeText();
     });
 
     window.addEventListener('mouseout', () => {
@@ -46,6 +70,7 @@ export class StartComponent implements OnInit {
     });
 
     this.animate(this.ctx, this.canvas, this.hue);
+    this.resizeText();
   }
 
   handleParticle() {
@@ -77,6 +102,38 @@ export class StartComponent implements OnInit {
     this.handleParticle();
     this.hue++;
     requestAnimationFrame(() => this.animate(ctx, canvas, hue));
+  }
+
+  isOverflown = (parentHeight, elementWidth) => elementWidth > parentHeight;
+
+  resizeText() {
+    this.resizeTextElement = document.querySelector('.start-vertical-text');
+    let minSize = 5;
+    let maxSize = 50;
+    let step = 0.1;
+    let unit = 'px';
+
+    let i = minSize;
+    let overflow = false;
+    let el = this.resizeTextElement;
+    console.log(el.innerText);
+
+    const parent = this.resizeTextElement.parentNode;
+
+    while (!overflow && i < maxSize) {
+      console.clear();
+      console.log('WHILE i=', i);
+      el.style.fontSize = `${i}${unit}`;
+      overflow = this.isOverflown(parent.clientHeight, el.clientWidth);
+
+      if (!overflow) i += step;
+    }
+    console.log(window.innerWidth);
+    if (window.innerWidth <= 1320) {
+      el.style.fontSize = `${i - step * 27}${unit}`;
+    } else {
+      el.style.fontSize = `${i - step * 34}${unit}`;
+    }
   }
 }
 

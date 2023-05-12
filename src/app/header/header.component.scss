@@ -59,6 +59,8 @@
 
 .menu-mobile {
   cursor: pointer;
+  display: flex;
+  gap: 25px;
   img {
     width: 25px;
   }

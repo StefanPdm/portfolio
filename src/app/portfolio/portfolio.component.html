@@ -5,7 +5,10 @@
       <div class="headline">Portfolio</div>
       <div></div>
     </div>
-    <span>This page is a sample of my work - please feel free to try them out.</span>
+    <span *ngIf="language === 'en'">This page is a sample of my work - please feel free to try them
+      out.</span>
+    <span *ngIf="language === 'de'">Nachfolgend einige Beispielprojekte - Probiere die gern mal
+      aus.</span>
     <!-- Start single project containers -->
     <div class="project-container">
       <div class="project-image"><img src="assets/img/portfolio/join.png" alt="join screenshot">
@@ -13,9 +16,14 @@
       <div class="project-description-wrapper">
         <div class="project-title">Join</div>
         <div class="project-languages"> HTML | CSS | JS</div>
-        <div class="project-description">Task manager inspired by the Kanban System. Create and
+        <div class="project-description" *ngIf="language === 'en'">Task manager inspired by the
+          Kanban System. Create and
           organize tasks using drag and drop functions,
           assign users and categories.</div>
+        <div class="project-description" *ngIf="language === 'de'">Task Manager gemäß dem bekannten
+          Kanban System. Erstelle und
+          organisiere Aufgaben für deine Kollegen mittels Drag and Drop, lade neue Usersein oder
+          erstelle eignen Kategorien.</div>
         <div class="project-button-wrapper">
           <a class="button-live"
             href="https://stefan-heinemann.developerakademie.net/JOIN/index.html"
@@ -112,6 +120,35 @@
         </div>
         <div class="project-button-wrapper">
           <a class="button-live" href="https://www.heinemann.berlin/portfolio_legacy/index.html"
+            target="_blank"><button>Live test</button></a>
+        </div>
+      </div>
+    </div>
+    <!-- seventh project -->
+    <div class="project-container">
+      <div class="project-image">
+
+        <video src="assets/video/Canvas_Video.mp4" [autoplay]="true" [muted]="true" [loop]="true"
+          [playsInline]="true" type="mp4"></video>
+        <img src="assets/img/portfolio/empty_notebook_black.png" alt="portfolio screenshot">
+
+
+      </div>
+      <div class="project-description-wrapper">
+        <div class="project-title">Canvas Experimentation</div>
+        <div class="project-languages">JS | CSS | HTML</div>
+        <div *ngIf="language=== 'en'" class="project-description">Inspired by Franks laboratory I
+          played with some interactive Canvas containers with using of object orientation. See
+          beautiful fractals, pixel manipulation and a classic matrix rain.
+        </div>
+        <div *ngIf="language=== 'de'" class="project-description">Inspiriert von Franks Laboratory
+          spiele ich hier mit 3 interactiven Canvas Containern unter verwendung der
+          objektorientierten Programmierung. Genieße wunderschöne Fraktale, Pixelmanipulation und
+          einen klassischen Matrixregen.
+        </div>
+        <div class="project-button-wrapper">
+          <a class="button-live"
+            href="https://www.heinemann.berlin/canvas_experimentation/index.html"
             target="_blank"><button>Live test</button></a>
         </div>
       </div>

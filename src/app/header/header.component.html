@@ -71,12 +71,19 @@
       </ul>
     </div>
     <div class=" menu-mobile desktop-none">
+      <a *ngIf="language === 'de'" (click)="toggleLanguage()"><img
+          src="./assets/img/header/united-kingdom.png" alt="english"></a>
+      <a *ngIf="language === 'en'" (click)="toggleLanguage()"><img
+          src="./assets/img/header/germany.png" alt="english"></a>
       <img id="burger" class="" src="/assets/img/header/burger_1.svg" alt="burger-menu"
         (click)="toggleMobileMenu('burger')">
       <div class="mobile-menu-container" id="mobile-menu">
         <ul>
           <li>
-            <a href="#about" (click)="toggleMobileMenu('burger')">About me</a>
+            <a *ngIf="language === 'en'" href="#about" (click)="toggleMobileMenu('burger')">About
+              me</a>
+            <a *ngIf="language === 'de'" href="#about" (click)="toggleMobileMenu('burger')">Über
+              mich</a>
           </li>
           <li>
             <a href="#skills" (click)="toggleMobileMenu('burger')">Skills</a>
@@ -85,13 +92,16 @@
             <a href="#portfolio" (click)="toggleMobileMenu('burger')">Portfolio</a>
           </li>
           <li>
-            <a href="#contact" (click)="toggleMobileMenu('burger')">Contact</a>
+            <a *ngIf="language === 'en'" href="#contact"
+              (click)="toggleMobileMenu('burger')">Contact</a>
+            <a *ngIf="language === 'de'" href="#contact"
+              (click)="toggleMobileMenu('burger')">Kontakt</a>
           </li>
           <li>
-            <a *ngIf="language === 'de'" (click)="toggleLanguage(); toggleMobileMenu('burger')"><img
+            <!-- <a *ngIf="language === 'de'" (click)="toggleLanguage(); toggleMobileMenu('burger')"><img
                 src="./assets/img/header/united-kingdom.png" alt="english"></a>
             <a *ngIf="language === 'en'" (click)="toggleLanguage(); toggleMobileMenu('burger')"><img
-                src="./assets/img/header/germany.png" alt="english"></a>
+                src="./assets/img/header/germany.png" alt="english"></a> -->
           </li>
 
         </ul>
