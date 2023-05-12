@@ -41,8 +41,13 @@ $breakpoint_6: 540px;
     }
 
     .logo-footer {
-      width: 220px;
+      // width: 220px;
       z-index: 1;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
 
       .i-point-footer {
         fill: url("#logo-gradient-footer");
