@@ -95,6 +95,7 @@ $breakpoint_6: 540px;
     height: 100%;
     width: 45%;
     position: relative;
+    transition: all 225ms ease-in-out;
 
     video {
       position: absolute;
@@ -189,6 +190,11 @@ $breakpoint_6: 540px;
   }
 }
 
+.image-marked {
+  scale: 1.2;
+  translate: 0px 40px;
+}
+
 ///////////////////////////////////////////////////////////////////////
 // start meadia section ///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -219,6 +225,11 @@ $breakpoint_6: 540px;
     margin-top: 20px;
     margin-bottom: 60px;
 
+    .image-marked {
+      scale: 1.2;
+      translate: 0px -20px;
+    }
+
     &:nth-child(even) {
       flex-direction: column;
 
@@ -247,15 +258,15 @@ $breakpoint_6: 540px;
     }
 
     .project-image {
-      height: 210px;
+      height: 290px;
       max-width: none;
       justify-content: center;
 
       video {
-        top: 83px;
+        top: 104px;
         right: 50%;
         transform: translateX(calc(50% - 3px));
-        width: 141px;
+        width: 193px;
       }
 
       img {

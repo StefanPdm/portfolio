@@ -14,7 +14,6 @@ export class AboutComponent implements OnInit {
     this.hiddenElement = document.querySelectorAll('.hidden');
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        console.log('observers', entry.isIntersecting, entry.target);
         if (entry.isIntersecting) {
           entry.target.classList.add('show');
         } else {

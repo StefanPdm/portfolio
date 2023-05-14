@@ -103,6 +103,7 @@ $breakpoint_6: 540px;
       max-width: 450px;
       // flex-shrink: 1;
       object-fit: cover;
+      transition: all 1s ease-in-out;
     }
 
     .about-horizontal-line-green {
@@ -112,6 +113,7 @@ $breakpoint_6: 540px;
       width: 100vw;
       height: 4px;
       background: var(--green);
+      transition: all 1s ease-in-out;
     }
   }
 }
