@@ -40,7 +40,7 @@ export class PortfolioComponent implements OnInit {
       getElementsInArea(e, {
         elements: document.querySelectorAll('.project-image'),
         markedClass: 'image-marked',
-        zone: [40, 40], // distance from top and bottom
+        zone: [30, 30], // distance from top and bottom
       });
     }
   }

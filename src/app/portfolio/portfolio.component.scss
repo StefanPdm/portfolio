@@ -76,6 +76,7 @@ $breakpoint_6: 540px;
     .project-image {
       display: flex;
       justify-content: flex-start;
+      transform-origin: top left;
     }
 
     .project-description-wrapper {
@@ -95,7 +96,8 @@ $breakpoint_6: 540px;
     height: 100%;
     width: 45%;
     position: relative;
-    transition: all 225ms ease-in-out;
+    transition: all 325ms ease-in-out;
+    transform-origin: top right;
 
     video {
       position: absolute;
@@ -192,7 +194,13 @@ $breakpoint_6: 540px;
 
 .image-marked {
   scale: 1.2;
-  translate: 0px 40px;
+
+  & > img {
+    filter: drop-shadow(0px 0px 80px var(--purple));
+  }
+  video {
+    filter: drop-shadow(0px 0px 100px var(--purple));
+  }
 }
 
 ///////////////////////////////////////////////////////////////////////
@@ -227,7 +235,16 @@ $breakpoint_6: 540px;
 
     .image-marked {
       scale: 1.2;
-      translate: 0px -20px;
+      translate: 0px 0px;
+    }
+
+    .project-image {
+      &:nth-child(odd) {
+        transform-origin: bottom !important;
+      }
+      &:nth-child(even) {
+        transform-origin: bottom !important;
+      }
     }
 
     &:nth-child(even) {
