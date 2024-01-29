@@ -208,7 +208,7 @@ $breakpoint_6: 540px;
 }
 
 :root {
-  --green: #70e61c;
+  --green: rgb(112, 230, 28);
   --light-blue: #1cdae6;
   --purple: #9747ff;
   --dark-blue-bg: rgb(20, 29, 47);
@@ -280,6 +280,7 @@ a {
   position: relative;
   font-size: 9rem;
   font-weight: 700;
+  user-select: none;
 }
 
 button {

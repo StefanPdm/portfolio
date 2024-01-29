@@ -95,6 +95,16 @@ $breakpoint_6: 540px;
   min-width: 545px;
   max-width: 550px;
 
+  .headline span {
+    transition: all 0.5s ease-in-out;
+  }
+  .headline:hover span {
+    color: var(--purple) !important;
+    text-shadow: 0 0 50px rgba(112, 230, 28, 0.5);
+    -webkit-text-stroke: 0.5px black;
+    transition: all 0.3s ease-in-out;
+  }
+
   div:nth-child(2) {
     text-align: right;
   }

@@ -16,6 +16,7 @@ $breakpoint_6: 540px;
   display: flex;
   position: relative;
   justify-content: space-between;
+  align-items: center;
   gap: 5%;
   z-index: 3;
   font-size: 1.6rem;
@@ -91,9 +92,12 @@ $breakpoint_6: 540px;
     position: relative;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 10vw;
-    width: inherit;
-    transition: all 1s ease-in-out;
+    // transform: translateX(-10vw);
+    // padding-right: 10vw;
+    // width: inherit;
+    transition: all 0.7s;
+    height: fit-content;
+    // border: 1px solid white;
 
     img:nth-child(1) {
       border-radius: 50%;
@@ -109,7 +113,7 @@ $breakpoint_6: 540px;
     .about-horizontal-line-green {
       position: absolute;
       top: 50%;
-      left: calc(450px + 10vw);
+      left: calc(450px);
       width: 100vw;
       height: 4px;
       background: var(--green);

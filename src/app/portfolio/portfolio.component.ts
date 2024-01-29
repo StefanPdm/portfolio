@@ -9,8 +9,8 @@ export class PortfolioComponent implements OnInit {
   @Input() language: string;
 
   ngOnInit(): void {
-    var getElementsInArea = (function (docElm) {
-      var viewportHeight = docElm.clientHeight;
+    const getElementsInArea = (function (docElm) {
+      let viewportHeight = docElm.clientHeight;
 
       return function (e, opts) {
         var found = [],
@@ -36,7 +36,7 @@ export class PortfolioComponent implements OnInit {
     window.addEventListener('scroll', f);
 
     function f(e) {
-      console.log(e);
+      // console.log(e);
       getElementsInArea(e, {
         elements: document.querySelectorAll('.project-image'),
         markedClass: 'image-marked',
